@@ -4,19 +4,23 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Mary.Louince | In Progress </title>
+    <title>Mary Louince | My Wall </title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
 
     <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
-            background-color: #f2d275;
+            background: #f2d275 0%;
             font-family: 'VT323', monospace;
         }
 
         .navbar {
-            outline: 3px solid #7b0005;
+            outline: 5px solid #7b0005;
         }
 
         .navbar-brand {
@@ -33,14 +37,23 @@
             width: auto;
         }
 
-        .info {
+        .projects {
             background-color: #7b0005;
+            backdrop-filter: blur(10px);
         }
 
-        .info p {
+        .proj {
+            background-color: #f2d275;
+        }
+
+        .btn {
+            background-color: #7b0005;
             color: #f2d275;
         }
 
+        .footer {
+            background-color: #7b0005;
+        }
     </style>
 </head>
 
@@ -49,56 +62,115 @@
     <!--Navbar-->
     <nav class="navbar navbar-expand-sm my-5 mx-5 rounded-5">
         <div class="container-fluid justify-content-between">
-            <a class="navbar-brand content-center fw-bolder fs-3 ps-5" href="#">Home</a>
+            <a class="navbar-brand content-center fw-bolder fs-3 ps-5" href="#intro">Home</a>
 
             <a class="navbar-brand" href="#">
                 <img src="assets/ml.png" alt="Mary Louince Logo" class="img-fluid">
             </a>
 
-            <a class="navbar-brand fw-bolder fs-3 pe-5" href="#">About Me</a>
+            <a class="navbar-brand fw-bolder fs-3 pe-5" href="#projects">Projects</a>
         </div>
-    </div>
+        </div>
     </nav>
 
     <!--Intro-->
-    <div class="container my-5 py-5">
+    <div class="container intro my-5 py-5">
         <div class="row align-items-center">
             <div class="col-md-6">
-                <h2 class="fw-bold mt-5 mb-3 fs-1" style="color:#7b0005;">This is Mary Louince!</h2>
-                <p class="fs-3 my-5">
-                    SIMPLE. ELEGANT. USER-FRIENDLY.
-                    <br> The blend of design and function, making ideas come alive through code.
+                <h1 class="display-2 fw-bold mt-3 mb-3" style="color:#7b0005;">Hello, Wall!</h1>
+                <p class="fs-3 my-3 pt-4">
+                    Capture the creativity living in every pixel and line of code.
+                    This wall showcases the harmony of art and logic
+                    through purposeful design and coding.
                 </p>
-                <p class="fs-4 my-2 fst-italic">
-                    Every line of code can tell a story. Welcome to my space — where creativity meets
-                    logic.
+                <p class="fs-4 fst-italic mt-5">
+                    Designed and developed by Mary Louice B. Balistoy.
                 </p>
             </div>
 
             <div class="col-md-6 text-center">
-                <img src="assets/me.jpg" alt="Mary Louince" class="img-fluid rounded-5 shadow"
-                    style="max-width: 80%; object-fit: cover;">
+                <img src="assets/me.png" alt="Mary Louince" class="img-fluid mx-1 px-1"
+                    style="max-width: 100%; object-fit: cover;">
             </div>
         </div>
     </div>
 
     </div>
 
-    <div class="container-fluid text-center info">
-        <div class="row">
-            <div class="col my-5">
-                <p class="fs-1">PROJECTS</p>
+    <!--personal info-->
+    <div class="container my-5 text-center">
+
+        <div class="row justify-content-center mt-4">
+            <div class="col mb-4">
+                <p class="fw-semibold fs-4 mb-2"><span class="fw-bolder"> Location:</span> Batangas, Philippines</p>
+                <div class="col mb-4">
+                    <p class="mb-1">
+                        <a href="mailto:balistoymarylouince@gmail.com"
+                            class="fw-semibold fs-4 text-decoration-none link-dark">
+                            <span class="fw-bolder"> Email:</span> balistoymarylouince@gmail.com
+                        </a>
+                    </p>
+                    <div class="col mb-4">
+                        <p class="mb-1">
+                            <a href="https://github.com/marylouinceb" target="_blank"
+                                class="fw-semibold fs-4 text-decoration-none link-dark">
+                                <span class="fw-bolder"> GitHub Account:</span> https://github.com/marylouinceb
+                            </a>
+                        </p>
+                        <div class="col mb-4">
+                            <p class="mb-1">
+                                <a href="https://github.com/marylouinceb/marylouinceb.github.io.git" target="_blank"
+                                    class="fw-semibold fs-4 text-decoration-none link-dark">
+                                    <span class="fw-bolder"> Portfolio Link:</span>
+                                    https://github.com/marylouinceb/marylouinceb.github.io.git
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 
-    <div class="container-fluid text-center info">
-        <div class="row">
-            <div class="col my-5">
-                <p class="fs-1">PROJECTS</p>
+    <!--projects-->
+    <div id="projects"
+        class="projects d-flex align-items-center justify-content-center text-center shadow-3 rounded-5 mb-5 mx-5">
+        <div class="container my-5">
+            <div class="row justify-content-center">
+                <div class="col-12 text-center mb-5 my-5 mx-5">
+                    <h2 class="display-3 fw-bold mb-4" style="color:#f2d275;">PROJECTS</h2>
+                </div>
+
+                <div class="col-md-4 proj px-5 py-5 mx-3 mb-5 rounded-4 shadow-sm">
+                    <h4 class="text-dark display-5 fw-bold">Activities</h4>
+                    <p class="fs-4">Exercises and academic projects.</p>
+                    <a class="btn btn-outline btn-lg px-5 py-3 fs-3" href="activities.html" role="button">Open</a>
+                </div>
+
+                <div class="col-md-4 proj px-5 py-5 mx-3 mb-5 rounded-4 shadow-sm">
+                    <h4 class="text-dark display-5 fw-bold">Websites</h4>
+                    <p class="fs-4">Responsive and user-friendly web projects.</p>
+                    <a class="btn btn-outline btn-lg px-5 py-3 fs-3" href="websites.html" role="button">Open</a>
+                </div>
+
+                <div class="col-md-4 proj px-5 py-5 mx-3 mb-5 rounded-4 shadow-sm">
+                    <h4 class="text-dark display-5 fw-bold">Designs</h4>
+                    <p class="fs-4">Layouts, visual mockups, and creative concepts.</p>
+                    <a class="btn btn-outline btn-lg px-5 py-3 fs-3" href="designs.html" role="button">Open</a>
+                </div>
             </div>
         </div>
+
     </div>
+    </div>
+    </div>
+
+    <!--footer-->
+    <footer class="footer text-light text-center py-4 mt-5">
+        <div class="container">
+            <p class="mb-1 fs-4">© 2025 Mary Louince | My Wall. All Rights Reserved.</p>
+        </div>
+    </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"

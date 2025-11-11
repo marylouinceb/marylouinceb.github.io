@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Mary Louince - Activities</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #f2d275 0%;
+            font-family: 'VT323', monospace;
+        }
+
+        .navbar {
+            outline: 5px solid #7b0005;
+        }
+
+        .navbar-brand {
+            color: #7b0005 !important;
+            text-decoration: none;
+        }
+
+        .navbar-brand:hover {
+            color: #ffffff !important;
+        }
+
+        .navbar img {
+            height: 40px;
+            width: auto;
+        }
+
+        .banner {
+            background-color: #a20007;
+            background-size: cover;
+            background-position: center;
+            color: #ededed;
+            opacity: 100%;
+            height: 700px;
+            margin: 0 60px 60px 60px;
+        }
+
+        .banner h1 {
+            color: #ededed;
+            text-shadow: 2px 2px 4px #000000;
+        }
+
+        .banner h1:hover {
+            transform: scale(1.05);
+            transition: 0.3s;
+        }
+
+        .card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            height: 100%;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .card-img-top {
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .btn-dark {
+            background-color: #7b0005;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-dark:hover {
+            background-color: #a20007;
+        }
+
+        .footer {
+            background-color: #7b0005;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!--navbar-->
+    <nav class="navbar navbar-expand-sm my-5 mx-5 rounded-5">
+        <div class="container-fluid justify-content-between">
+            <a class="navbar-brand content-center fw-bolder fs-3 ps-5" href="index.html">Home</a>
+
+            <a class="navbar-brand" href="#">
+                <img src="assets/ml.png" alt="Mary Louince Logo" class="img-fluid">
+            </a>
+
+            <a class="navbar-brand fw-bolder fs-3 pe-5" href="index.html#projects">Projects</a>
+        </div>
+    </nav>
+
+    <!--banner-->
+    <div class="banner d-flex align-items-center justify-content-center text-center rounded-5 mb-5 mt-5" id="banner">
+        <div class="container mt-3">
+            <h1 class="display-1 fw-bold white">
+                ACTIVITIES
+        </div>
+    </div>
+
+    <!--activities section-->
+    <div class="container my-5 py-5 text-center">
+        <div class="row justify-content-center">
+
+            <!--card 1-->
+            <div class="col-md-5 m-3 pt-5">
+                <div class="card shadow rounded-5">
+                    <img src="assets/headercanon.png" class="card-img-top rounded-top-5" alt="Activity 1">
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold fs-3 mt-3">SheTech Project: <br> Canon EOS R10</h5>
+                        <p class="card-text fs-5">
+                            A sleek product page for the Canon EOS R10.
+                        </p>
+                        <a href="https://marylouinceb.github.io/product-web-project/" target="_blank"
+                            class="btn btn-dark rounded-4 px-5 py-3 mb-3 mt-3 fs-4">View</a>
+                    </div> 
+                </div>
+            </div>
+
+            <!--card 2-->
+            <div class="col-md-5 m-3 pt-5">
+                <div class="card shadow rounded-5">
+                    <img src="assets/amsterdam.jpg" class="card-img-top rounded-top-5" alt="Activity 2">
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold fs-3 mt-3">DiscoverLy: <br> The Amsterdam</h5>
+                        <p class="card-text fs-5">
+                            Explore the beauty of Amsterdam.
+                        </p>
+                        <a href="https://marylouinceb.github.io/discoverly-amsterdam/" target="_blank"
+                            class="btn btn-dark rounded-4 px-5 py-3 mb-3 mt-3 fs-4">View</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!--footer-->
+    <footer class="footer text-light text-center py-4 mt-5">
+        <div class="container">
+            <p class="mb-1 fs-4">© 2025 Mary Louince | My Wall. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
