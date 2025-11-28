@@ -1,180 +1,438 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Mary Louince | My Wall </title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Studio.ML || Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="assets/mylogo.svg">
+    
     <style>
-        html {
-            scroll-behavior: smooth;
-        }
-
         body {
-            background: #f2d275 0%;
-            font-family: 'VT323', monospace;
+            background-color: white;
+            color: #3a3a3a;
+            font-family: 'Poppins', sans-serif;
         }
 
-        .navbar {
-            outline: 5px solid #7b0005;
+        .navbar-custom {
+            position: sticky !important;
+            top: 1rem;
+            background: rgba(203, 198, 198, 0.585);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            border-radius: 3rem;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            padding: 0.5rem 2rem !important;
+            margin: 1rem 2rem;
+            z-index: 1000;
         }
 
-        .navbar-brand {
-            color: #7b0005 !important;
-            text-decoration: none;
-        }
-
-        .navbar-brand:hover {
-            color: #ffffff !important;
-        }
-
-        .navbar img {
-            height: 40px;
+        .logo-img {
+            height: 60px;
             width: auto;
+            object-fit: contain;
         }
 
-        .projects {
-            background-color: #7b0005;
-            backdrop-filter: blur(10px);
+        .hero-container {
+            background-color: #eac3bf;
+            border-radius: 2rem;
+            overflow: hidden;
+            height: 300%;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
         }
 
-        .proj {
-            background-color: #f2d275;
+        .hero-image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
         }
 
-        .btn {
-            background-color: #7b0005;
-            color: #f2d275;
-        }
-
-        .footer {
-            background-color: #7b0005;
+        .about {
+            border-radius: 2rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+            overflow: hidden;
         }
     </style>
 </head>
 
 <body>
 
-    <!--Navbar-->
-    <nav class="navbar navbar-expand-sm my-5 mx-5 rounded-5">
-        <div class="container-fluid justify-content-between">
-            <a class="navbar-brand content-center fw-bolder fs-3 ps-5" href="#intro">Home</a>
-
-            <a class="navbar-brand" href="#">
-                <img src="assets/ml.png" alt="Mary Louince Logo" class="img-fluid">
+    <!--navbar-->
+    <nav class="navbar navbar-expand-lg navbar-custom mx-5 mt-5">
+        <div class="container-fluid px-0">
+            <a class="navbar-brand fw-700 me-auto" href="#">
+                <img src="assets/mylogo.svg" alt="Logo" class="logo-img">
             </a>
-
-            <a class="navbar-brand fw-bolder fs-3 pe-5" href="#projects">Projects</a>
-        </div>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link fw-500 px-3" href="index.html"
+                            style="color: #3a3a3a !important;">Home</a></li>
+                    <li class="nav-item"><a class="nav-link fw-500 px-3" href="#about"
+                            style="color: #3a3a3a !important;">About Me</a></li>
+                    <li class="nav-item"><a class="nav-link fw-500 px-3" href="#projects"
+                            style="color: #3a3a3a !important;">Projects</a></li>
+                </ul>
+            </div>
+            <a href="#contact" class="btn btn-sm fw-600 ms-3"
+                style="background-color: #9f544a; color: white; border-radius: 2rem; padding: 0.5rem 1.5rem;">Contact</a>
         </div>
     </nav>
 
-    <!--Intro-->
-    <div class="container intro my-5 py-5">
-        <div class="row align-items-center">
-            <div class="col-md-6">
-                <h1 class="display-2 fw-bold mt-3 mb-3" style="color:#7b0005;">Hello, Wall!</h1>
-                <p class="fs-3 my-3 pt-4">
-                    Capture the creativity living in every pixel and line of code.
-                    This wall showcases the harmony of art and logic
-                    through purposeful design and coding.
-                </p>
-                <p class="fs-4 fst-italic mt-5">
-                    Designed and developed by Mary Louice B. Balistoy.
-                </p>
-            </div>
+    <!--hero-->
+    <section id="home" class="py-5" style="background-color: white;">
+        <div class="container-fluid px-5 py-5">
+            <div class="hero-container pt-5 pb-5">
+                <div class="row g-0 align-items-center">
+                    <div class="col-lg-5 d-flex align-items-center justify-content-center p-5 pt-5 pb-5">
+                        <div style="width: 100%; max-width: 300px;">
+                            <img src="https://via.placeholder.com/300x400?text=Your+Photo" alt="Profile"
+                                class="hero-image" style="width: 100%; height: auto;">
+                        </div>
+                    </div>
 
-            <div class="col-md-6 text-center">
-                <img src="assets/me.png" alt="Mary Louince" class="img-fluid mx-1 px-1"
-                    style="max-width: 100%; object-fit: cover;">
-            </div>
-        </div>
-    </div>
-
-    </div>
-
-    <!--personal info-->
-    <div class="container my-5 text-center">
-
-        <div class="row justify-content-center mt-4">
-            <div class="col mb-4">
-                <p class="fw-semibold fs-4 mb-2"><span class="fw-bolder"> Location:</span> Batangas, Philippines</p>
-                <div class="col mb-4">
-                    <p class="mb-1">
-                        <a href="mailto:balistoymarylouince@gmail.com"
-                            class="fw-semibold fs-4 text-decoration-none link-dark">
-                            <span class="fw-bolder"> Email:</span> balistoymarylouince@gmail.com
-                        </a>
-                    </p>
-                    <div class="col mb-4">
-                        <p class="mb-1">
-                            <a href="https://github.com/marylouinceb" target="_blank"
-                                class="fw-semibold fs-4 text-decoration-none link-dark">
-                                <span class="fw-bolder"> GitHub Account:</span> https://github.com/marylouinceb
-                            </a>
+                    <div class="col-lg-7 p-5 pt-5 pb-5">
+                        <h1 class="display-4 fw-700 mb-2" style="color: #3a3a3a; line-height: 1.2;">
+                            Crafting Digital Experiences
+                        </h1>
+                        <p class="fs-5 mb-4" style="color: #666666; font-weight: 300; line-height: 1.8;">
+                            I create functional digital solutions that blend creativity with innovation.
+                            Explore my journey through projects that showcase versatility across multiple domains.
                         </p>
-                        <div class="col mb-4">
-                            <p class="mb-1">
-                                <a href="https://github.com/marylouinceb/marylouinceb.github.io.git" target="_blank"
-                                    class="fw-semibold fs-4 text-decoration-none link-dark">
-                                    <span class="fw-bolder"> Portfolio Link:</span>
-                                    https://github.com/marylouinceb/marylouinceb.github.io.git
-                                </a>
-                            </p>
+                        <div class="d-flex gap-3 flex-wrap">
+                            <a href="#about" class="btn fw-600 px-5"
+                                style="background-color: #9f544a; color: white; border-radius: 2rem; padding: 0.75rem 2rem;">View
+                                More</a>
+                            <a href="#certificates" class="btn fw-600 px-5"
+                                style="background-color: #9f544a; color: white; border-radius: 2rem; padding: 0.75rem 2rem;">Certificates</a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 
-    <!--projects-->
-    <div id="projects"
-        class="projects d-flex align-items-center justify-content-center text-center shadow-3 rounded-5 mb-5 mx-5">
-        <div class="container my-5">
-            <div class="row justify-content-center">
-                <div class="col-12 text-center mb-5 my-5 mx-5">
-                    <h2 class="display-3 fw-bold mb-4" style="color:#f2d275;">PROJECTS</h2>
+    <!--about-->
+    <section id="about" class="py-5" style="background-color: white;">
+        <div class="container-lg px-4 py-5">
+            <h2 class="display-5 fw-700 mb-5" style="color: #3a3a3a;">About Me</h2>
+
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="p-5 h-100"
+                        style="background-color: #eac3bf; border-radius: 2rem; box-shadow: 0 4px 12px rgba(0,0,0,0.06);">
+                        <p class="mb-3 fs-5" style="color: #666666; line-height: 1.8;"><span style="color: #9f544a;">✦
+                                Number:</span> Available Upon Request</p>
+                        <p class="mb-3 fs-5" style="color: #666666; line-height: 1.8;"><span style="color: #9f544a;">✦
+                                Email:</span> balistoymarylouince@gmail.com</p>
+                        <p class="mb-3 fs-5" style="color: #666666; line-height: 1.8;"><span style="color: #9f544a;">✦
+                                Location:</span> Batangas, Philippines</p>
+                        <p class="mb-0 fs-5" style="color: #666666; line-height: 1.8;"><span style="color: #9f544a;">✦
+                                GitHub Portfolio:</span> <br> <a class="fs-6"
+                                href="https://github.com/marylouinceb/marylouinceb.github.io.git" target="_blank"
+                                rel="noopener noreferrer">https://github.com/marylouinceb/marylouinceb.github.io.git</a>
+                        </p>
+                    </div>
                 </div>
 
-                <div class="col-md-4 proj px-5 py-5 mx-3 mb-5 rounded-4 shadow-sm">
-                    <h4 class="text-dark display-5 fw-bold">Activities</h4>
-                    <p class="fs-4">Exercises and academic projects.</p>
-                    <a class="btn btn-outline btn-lg px-5 py-3 fs-3" href="activities.html" role="button">Open</a>
-                </div>
-
-                <div class="col-md-4 proj px-5 py-5 mx-3 mb-5 rounded-4 shadow-sm">
-                    <h4 class="text-dark display-5 fw-bold">Websites</h4>
-                    <p class="fs-4">Responsive and user-friendly web projects.</p>
-                    <a class="btn btn-outline btn-lg px-5 py-3 fs-3" href="websites.html" role="button">Open</a>
-                </div>
-
-                <div class="col-md-4 proj px-5 py-5 mx-3 mb-5 rounded-4 shadow-sm">
-                    <h4 class="text-dark display-5 fw-bold">Designs</h4>
-                    <p class="fs-4">Layouts, visual mockups, and creative concepts.</p>
-                    <a class="btn btn-outline btn-lg px-5 py-3 fs-3" href="designs.html" role="button">Open</a>
+                <div class="col-md-6">
+                    <div class="p-5 h-100"
+                        style="background-color: #9f544a; border-radius: 2rem; box-shadow: 0 4px 12px rgba(0,0,0,0.06);">
+                        <p class="mb-3 fs-5" style="color: white; line-height: 1.8;"><span
+                                style="color: #eac3bf;">✦</span> Student at Polytechnic University of the Philippines
+                        </p>
+                        <p class="mb-3 fs-5" style="color: white; line-height: 1.8;"><span
+                                style="color: #eac3bf;">✦</span> Bachelor of Science in Information Technology</p>
+                        <p class="mb-3 fs-5" style="color: white; line-height: 1.8;"><span
+                                style="color: #eac3bf;">✦</span></p>
+                        <p class="mb-3 fs-5" style="color: white; line-height: 1.8;"><span
+                                style="color: #eac3bf;">✦</span></p>
+                        <p class="mb-0 fs-5" style="color: white; line-height: 1.8;"><span
+                                style="color: #eac3bf;">✦</span></p>
+                    </div>
                 </div>
             </div>
         </div>
+    </section>
 
-    </div>
-    </div>
+    <!--projects-->
+    <section id="projects" class="py-5" style="background-color: white;">
+        <div class="container-lg px-4 py-5">
+            <h2 class="display-5 fw-700 mb-5" style="color: #3a3a3a;">Projects</h2>
+            </h2>
+
+            <div class="row g-4 mt-2">
+                <div class="col-md-6 col-lg-4">
+                    <div style="background-color: #eac3bf; border-radius: 2rem; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.08);"
+                        class="h-100 d-flex flex-column">
+                        <div class="p-5 text-center"
+                            style="background: linear-gradient(135deg, #9f544a 0%, #5a3735 100%); color: white;">
+                            <h3 class="fw-700 mb-0">Activities</h3>
+                        </div>
+                        <div class="p-4 flex-grow-1 d-flex flex-column">
+                            <p style="color: #666666; font-weight: 300; line-height: 1.8;">
+                                Academic projects.
+                            </p>
+                            <a href="activities.html" class="btn fw-600 w-100 mt-auto"
+                                style="background-color: #9f544a; color: white; border-radius: 2rem;">View
+                                Projects</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div style="background-color: #eac3bf; border-radius: 2rem; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.08);"
+                        class="h-100 d-flex flex-column">
+                        <div class="p-5 text-center"
+                            style="background: linear-gradient(135deg, #9f544a 0%, #5a3735 100%); color: white;">
+                            <h3 class="fw-700 mb-0">Designs</h3>
+                        </div>
+                        <div class="p-4 flex-grow-1 d-flex flex-column">
+                            <p style="color: #666666; font-weight: 300; line-height: 1.8;">
+                                Beautiful UI/UX designs that combine stunning visuals with intuitive functionality.
+                            </p>
+                            <a href="designs.html" class="btn fw-600 w-100 mt-auto"
+                                style="background-color: #9f544a; color: white; border-radius: 2rem;">View
+                                Designs</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div style="background-color: #eac3bf; border-radius: 2rem; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.08);"
+                        class="h-100 d-flex flex-column">
+                        <div class="p-5 text-center"
+                            style="background: linear-gradient(135deg, #7a5454 0%, #5a3735 100%); color: white;">
+                            <h3 class="fw-700 mb-0">Websites</h3>
+                        </div>
+                        <div class="p-4 flex-grow-1 d-flex flex-column">
+                            <p style="color: #666666; font-weight: 300; line-height: 1.8;">
+                                Fully functional, responsive websites built with cutting-edge technologies and best
+                                practices.
+                            </p>
+                            <a href="websites.html" class="btn fw-600 w-100 mt-auto"
+                                style="background-color: #9f544a; color: white; border-radius: 2rem;">View
+                                Websites</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--certificates-->
+    <section id="certificates" class="py-5" style="background-color: #eac3bf;">
+        <div class="container-lg px-4 py-5">
+            <h2 class="display-5 fw-700 mb-5" style="color: #3a3a3a;">Certificates
+            </h2>
+
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4">
+                    <div
+                        style="background-color: white; border-radius: 2rem; box-shadow: 0 2px 8px rgba(0,0,0,0.04); overflow: hidden;">
+                        <img src="https://via.placeholder.com/400x300?text=Certificate+1" alt="Certificate 1"
+                            class="w-100"
+                            style="height: 250px; object-fit: cover; cursor: pointer; border-radius: 2rem 2rem 0 0;"
+                            onclick="openModal(this.src)">
+                        <div class="p-4">
+                            <h4 class="fw-700 mb-2" style="color: #3a3a3a;">N/A</h4>
+                            <p style="color: #666666; font-weight: 300; font-size: 0.9rem; margin-bottom: 0.5rem;">
+                                Issued by: N/A</p>
+                            <p style="color: #666666; font-weight: 300; font-size: 0.9rem;">Date: N/A
+                            </p>
+                            <small style="color: #9f544a; cursor: pointer;"
+                                onclick="openModal(this.parentElement.parentElement.querySelector('img').src)">Click
+                                image to enlarge →</small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div
+                        style="background-color: white; border-radius: 2rem; box-shadow: 0 2px 8px rgba(0,0,0,0.04); overflow: hidden;">
+                        <img src="https://via.placeholder.com/400x300?text=Certificate+2" alt="Certificate 2"
+                            class="w-100"
+                            style="height: 250px; object-fit: cover; cursor: pointer; border-radius: 2rem 2rem 0 0;"
+                            onclick="openModal(this.src)">
+                        <div class="p-4">
+                            <h4 class="fw-700 mb-2" style="color: #3a3a3a;">N/A</h4>
+                            <p style="color: #666666; font-weight: 300; font-size: 0.9rem; margin-bottom: 0.5rem;">
+                                Issued by: N/A</p>
+                            <p style="color: #666666; font-weight: 300; font-size: 0.9rem;">Date: N/A</p>
+                            <small style="color: #5a3735; cursor: pointer;"
+                                onclick="openModal(this.parentElement.parentElement.querySelector('img').src)">Click
+                                image to enlarge →</small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div
+                        style="background-color: white; border-radius: 2rem; box-shadow: 0 2px 8px rgba(0,0,0,0.04); overflow: hidden;">
+                        <img src="https://via.placeholder.com/400x300?text=Certificate+3" alt="Certificate 3"
+                            class="w-100"
+                            style="height: 250px; object-fit: cover; cursor: pointer; border-radius: 2rem 2rem 0 0;"
+                            onclick="openModal(this.src)">
+                        <div class="p-4">
+                            <h4 class="fw-700 mb-2" style="color: #3a3a3a;">N/A</h4>
+                            <p style="color: #666666; font-weight: 300; font-size: 0.9rem; margin-bottom: 0.5rem;">
+                                Issued by: N/A</p>
+                            <p style="color: #666666; font-weight: 300; font-size: 0.9rem;">Date: N/A
+                            </p>
+                            <small style="color: #9f544a; cursor: pointer;"
+                                onclick="openModal(this.parentElement.parentElement.querySelector('img').src)">Click
+                                image to enlarge →</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="certificateModal"
+        style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.8); z-index: 2000; justify-content: center; align-items: center;">
+        <div style="position: relative; max-width: 90%; max-height: 90vh;">
+            <img id="modalImage" src="/placeholder.svg" alt="Full Certificate"
+                style="width: 100%; height: auto; border-radius: 1rem; max-height: 80vh; object-fit: contain;">
+            <button onclick="closeModal()"
+                style="position: absolute; top: -3rem; right: 0; background: white; border: none; border-radius: 50%; width: 3rem; height: 3rem; font-size: 1.5rem; cursor: pointer; display: flex; align-items: center; justify-content: center;">✕</button>
+        </div>
     </div>
 
-    <!--footer-->
-    <footer class="footer text-light text-center py-4 mt-5">
-        <div class="container">
-            <p class="mb-1 fs-4">© 2025 Mary Louince | My Wall. All Rights Reserved.</p>
+    <section id="contact" class="py-5" style="background-color: white;">
+        <div class="container-lg px-4 py-5">
+            <h2 class="display-5 fw-700 mb-5" style="color: #3a3a3a;">Get In <span class="accent-medium">Touch</span>
+            </h2>
+
+            <div class="row g-5 align-items-center d-flex justify-content-center">
+                <div class="col-lg-6 d-flex flex-column justify-content-center">
+                    <div
+                        style="background: linear-gradient(135deg, #9f544a 0%, #7a5454 100%); border-radius: 2rem; padding: 3rem; color: white;">
+                        <h3 class="fw-700 mb-4">Let's Connect</h3>
+                        <p style="font-weight: 300; line-height: 1.8; margin-bottom: 2rem;">
+                            Have a project in mind or want to collaborate? I'd love to hear from you. Get in touch and
+                            let's create something amazing together!
+                        </p>
+
+                        <div class="mb-4">
+                            <h5 class="fw-600 mb-2">Email</h5>
+                            <a href="mailto:balistoymarylouince@gmail.com"
+                                style="color: #eac3bf; text-decoration: none; font-weight: 300;">balistoymarylouince@gmail.com</a>
+                        </div>
+
+                        <div class="mb-4">
+                            <h5 class="fw-600 mb-2">Phone</h5>
+                            <a href="Available Upon Request"
+                                style="color: #eac3bf; text-decoration: none; font-weight: 300;">Available Upon
+                                Request</a>
+                        </div>
+
+                        <div class="mb-4">
+                            <h5 class="fw-600 mb-2">Location</h5>
+                            <p style="font-weight: 300; margin-bottom: 0;">Batangas, Philippines</p>
+                        </div>
+
+                        <div class="mt-3">
+                            <h5 class="fw-600 mb-3">Follow Me</h5>
+                            <div class="d-flex gap-3">
+                                <a href="#"
+                                    style="color: #eac3bf; text-decoration: none; font-size: 1.2rem; width: 2.5rem; height: 2.5rem; display: flex; align-items: center; justify-content: center; border-radius: 50%; background-color: rgba(255,255,255,0.1); transition: all 0.3s ease;">
+                                    f
+                                </a>
+                                <a href="#"
+                                    style="color: #eac3bf; text-decoration: none; font-size: 1.2rem; width: 2.5rem; height: 2.5rem; display: flex; align-items: center; justify-content: center; border-radius: 50%; background-color: rgba(255,255,255,0.1); transition: all 0.3s ease;">
+                                    𝕏
+                                </a>
+                                <a href="#"
+                                    style="color: #eac3bf; text-decoration: none; font-size: 1.2rem; width: 2.5rem; height: 2.5rem; display: flex; align-items: center; justify-content: center; border-radius: 50%; background-color: rgba(255,255,255,0.1); transition: all 0.3s ease;">
+                                    in
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 d-flex flex-column justify-content-center">
+                    <form style="background-color: #eac3bf; border-radius: 2rem; padding: 2rem;">
+                        <div class="mb-4">
+                            <label for="name fw-bold" class="form-label fw-600" style="color: #3a3a3a;">Full
+                                Name</label>
+                            <input type="text" class="form-control" id="name" placeholder="Your Name"
+                                style="border: none; border-bottom: 2px solid #b77d77; background-color: transparent; border-radius: 0; padding: 0.5rem 0; color: #9f544a;">
+                        </div>
+
+                        <div class="mb-4">
+                            <label for="email fw-bold" class="form-label fw-600" style="color: #3a3a3a;">Email
+                                Address</label>
+                            <input type="email" class="form-control" id="email" placeholder="your.email@example.com"
+                                style="border: none; border-bottom: 2px solid #b77d77; background-color: transparent; border-radius: 0; padding: 0.5rem 0; color: #9f544a;">
+                        </div>
+
+                        <div class="mb-4">
+                            <label for="subject fw-bold" class="form-label fw-600"
+                                style="color: #3a3a3a;">Subject</label>
+                            <input type="text" class="form-control" id="subject" placeholder="Project Inquiry"
+                                style="border: none; border-bottom: 2px solid #b77d77; background-color: transparent; border-radius: 0; padding: 0.5rem 0; color: #9f544a;">
+                        </div>
+
+                        <div class="mb-4">
+                            <label for="message fw-bold" class="form-label fw-600"
+                                style="color: #3a3a3a;">Message</label>
+                            <textarea class="form-control" id="message" rows="4"
+                                placeholder="Tell me about your project..."
+                                style="border: none; border-bottom: 2px solid #b77d77; background-color: transparent; border-radius: 0; padding: 0.5rem 0; color: #9f544a; resize: none;"></textarea>
+                        </div>
+
+                        <button type="submit fw-bold" class="btn fw-600 w-100 mt-4"
+                            style="background-color: #9f544a; color: white; border-radius: 2rem; padding: 0.75rem 2rem; border: none; transition: all 0.3s ease;">Send
+                            Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-5"
+        style="background-color: #5a3735; color: white; border-radius: 3rem 3rem 0 0; margin-top: 5rem;">
+        <div class="container-lg px-4 text-center">
+            <div class="mb-4">
+                <a href="index.html" class="text-decoration-none fw-500 me-4" style="color: #eac3bf;">Home</a>
+                <a href="#about" class="text-decoration-none fw-500 me-4" style="color: #eac3bf;">About</a>
+                <a href="#projects" class="text-decoration-none fw-500" style="color: #eac3bf;">Projects</a>
+            </div>
+            <p class="mb-0" style="font-weight: 300; font-size: 0.95rem;">&copy; 2025 Studio.ML | Mary Louince
+                Portfolio. All Rights Reserved.</p>
         </div>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        function openModal(imageSrc) {
+            const modal = document.getElementById('certificateModal');
+            const modalImage = document.getElementById('modalImage');
+            modalImage.src = imageSrc;
+            modal.style.display = 'flex';
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('certificateModal');
+            modal.style.display = 'none';
+        }
+
+        document.getElementById('certificateModal').addEventListener('click', function (e) {
+            if (e.target === this) closeModal();
+        });
+
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape') closeModal();
+        });
+    </script>
 </body>
 
 </html>
