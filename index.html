@@ -1,438 +1,651 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Studio.ML || Portfolio</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet">
-    <link rel="icon" type="image/x-icon" href="assets/mylogo.svg">
-    
-    <style>
-        body {
-            background-color: white;
-            color: #3a3a3a;
-            font-family: 'Poppins', sans-serif;
-        }
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>SoLou. | Mary Louince</title>
 
-        .navbar-custom {
-            position: sticky !important;
-            top: 1rem;
-            background: rgba(203, 198, 198, 0.585);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.5);
-            border-radius: 3rem;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-            padding: 0.5rem 2rem !important;
-            margin: 1rem 2rem;
-            z-index: 1000;
-        }
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="icon" type="image/x-icon" href="assets/logo.svg">
+<style>
 
-        .logo-img {
-            height: 60px;
-            width: auto;
-            object-fit: contain;
-        }
+/*
+  RUSTIC ROMANCE — CORRECTED NEUMORPHIC SYSTEM
+  ─────────────────────────────────────────────
+  Surface (all elements):  #EFE9E3  Linen
+  Body floor:              #b8afa8  Dark linen  ← MUST be darker than surface
+  Light shadow:            #F5F1ED  Barely lighter than surface
+  Dark shadow:             rgba(110,89,82,0.55)  — warm mocha depth
+  Text primary:            #6E5952  Mocha Brown
+  Text muted:              #9F7A76  Warm Clay
+  Accent:                  #CFA2A5  Rosewood
 
-        .hero-container {
-            background-color: #eac3bf;
-            border-radius: 2rem;
-            overflow: hidden;
-            height: 300%;
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
-        }
+  DEPTH RULES:
+  • Raised  → shadows outward  (-X -Y light, +X +Y dark)
+  • Inset   → shadows inward   (inset -X -Y light, inset +X +Y dark)
+  • Bigger offsets = more depth — scale by element size
+  ─────────────────────────────────────────────
+*/
 
-        .hero-image {
-            width: 100%;
-            height: 400px;
-            object-fit: cover;
-        }
+* { box-sizing: border-box; }
 
-        .about {
-            border-radius: 2rem;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
-            overflow: hidden;
-        }
-    </style>
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #F5F1ED; /* ← dark floor — dashboard visibly lifts off this */
+  min-height: 100vh;
+  padding: 40px 15px;
+  color: #6E5952;
+}
+
+h1,h2,h3,h4,h5,h6     { color: #6E5952; }
+p, span, li            { color: #6E5952; }
+a                      { color: #6E5952; }
+.text-muted            { color: #9F7A76 !important; }
+.fw-bold, .fw-semibold { color: #6E5952; }
+.fst-italic            { color: #9F7A76 !important; }
+small                  { color: #9F7A76; }
+
+/* ─────────────────────────────────────────
+   DASHBOARD — largest raised surface
+   Offsets (20px) = dashboard depth lift
+───────────────────────────────────────── */
+.dashboard {
+  max-width: 1200px;
+  margin: auto;
+  padding: 40px;
+  border-radius: 40px;
+  background: #EFE9E3;
+  box-shadow:
+      -20px -20px 40px #F5F1ED,
+        20px  20px 40px rgba(110,89,82,0.55);
+}
+@media (max-width: 767.98px) {
+  body { padding: 20px 10px; }
+  .dashboard { padding: 24px 16px; border-radius: 28px; }
+  .about-section { padding: 20px; }
+  .service-card { padding: 28px 18px; }
+  section { margin-bottom: 50px; }
+}
+@media (max-width: 575.98px) {
+  .dashboard { padding: 18px 12px; border-radius: 22px; }
+}
+
+/* ─────────────────────────────────────────
+   NAV — medium raised pill ON dashboard
+   Medium offsets (8px) = sits above dashboard
+───────────────────────────────────────── */
+.nav-soft {
+  background: #EFE9E3;
+  padding: 15px 30px;
+  border-radius: 50px;
+  box-shadow:
+    -8px -8px 18px #F5F1ED,
+     8px  8px 18px rgba(110,89,82,0.55);
+}
+.nav-soft a {
+  color: #6E5952;
+  font-weight: 500;
+  text-decoration: none;
+}
+.nav-soft a:hover { opacity: .65; }
+
+/* ─────────────────────────────────────────
+   PROFILE PANEL — inset well
+   Inset (10px) = clearly pressed into dashboard
+───────────────────────────────────────── */
+.panel {
+  background: #EFE9E3;
+  border-radius: 28px;
+  padding: 25px;
+  box-shadow:
+    inset -10px -10px 20px #F5F1ED,
+    inset  10px  10px 20px rgba(110,89,82,0.55);
+}
+
+/* ─────────────────────────────────────────
+   ABOUT SECTION — raised card ON dashboard
+   Offsets (14px) = raised above dashboard
+───────────────────────────────────────── */
+.about-section {
+  background: #EFE9E3;
+  border-radius: 28px;
+  padding: 32px;
+  box-shadow:
+    -14px -14px 28px #F5F1ED,
+     14px  14px 28px rgba(110,89,82,0.55);
+}
+
+/* ─────────────────────────────────────────
+   SKILL CARDS — small raised tiles
+   Small offsets (6px) = subtle lift inside about-section
+───────────────────────────────────────── */
+.soft-card {
+  background: #EFE9E3;
+  border-radius: 22px;
+  padding: 20px;
+  text-align: center;
+  box-shadow:
+    -6px -6px 14px #F5F1ED,
+     6px  6px 14px rgba(110,89,82,0.55);
+  transition: .4s ease;
+}
+.soft-card:hover {
+  transform: translateY(-5px);
+  box-shadow:
+    -10px -10px 20px #F5F1ED,
+     10px  10px 20px rgba(110,89,82,0.55);
+}
+.soft-card i       { color: #6E5952; transition: .3s; }
+.soft-card:hover i { color: #c49a9d; }
+.soft-card p       { color: #6E5952; margin: 0; }
+
+/* ─────────────────────────────────────────
+   BUTTONS — raised pill
+   Medium offsets (6px) = interactive, pops off surface
+   Hover → fully inverts to inset (pressed feel)
+───────────────────────────────────────── */
+.btn-soft {
+  background: #EFE9E3;
+  border: none;
+  padding: 10px 24px;
+  border-radius: 50px;
+  box-shadow:
+    -6px -6px 12px #F5F1ED,
+     6px  6px 12px rgba(110,89,82,0.55);
+  transition: .3s ease;
+  text-decoration: none;
+  color: #6E5952;
+  display: inline-block;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+  font-size: inherit;
+  font-weight: 500;
+}
+.btn-soft:hover {
+  box-shadow:
+    inset -5px -5px 10px #F5F1ED,
+    inset  5px  5px 10px rgba(110,89,82,0.55);
+  transform: translateY(1px);
+  color: #6E5952;
+}
+
+/* ─────────────────────────────────────────
+   SERVICE ICON CARDS — INSET at rest
+   Deep inset (16px) = clearly sunken display well
+   Hover → RAISES outward — satisfying toggle
+───────────────────────────────────────── */
+.service-card {
+  background: #EFE9E3;
+  border-radius: 32px;
+  padding: 40px 26px;
+  box-shadow:
+    inset -10px -10px 22px #F5F1ED,
+    inset  10px  10px 22px rgba(110,89,82,0.55);
+  transition: .4s cubic-bezier(.4,0,.2,1);
+  position: relative;
+  overflow: hidden;
+}
+.service-card::before {
+  content: '';
+  position: absolute;
+  width: 180px;
+  height: 180px;
+  top: -50px; right: -50px;
+  pointer-events: none;
+}
+.service-card i {
+  font-size: 70px;
+  display: inline-block;
+  color: #6E5952;
+  transition: .4s;
+}
+.service-card:hover {
+  box-shadow:
+    -12px -12px 24px #F5F1ED,
+     12px  12px 24px rgba(110,89,82,0.55);
+  transform: translateY(-8px);
+}
+.service-card:hover i {
+  transform: scale(1.15) rotate(-5deg);
+  filter: drop-shadow(0 4px 14px rgba(207,162,165,0.5));
+}
+
+/* ─────────────────────────────────────────
+   PORTFOLIO IMAGES — raised frames
+───────────────────────────────────────── */
+.work-img {
+  cursor: pointer;
+  transition: .4s ease;
+  border-radius: 22px;
+  box-shadow:
+    -8px -8px 16px #F5F1ED,
+     8px  8px 16px rgba(110,89,82,0.55);
+}
+.work-img:hover {
+  transform: scale(1.04);
+  box-shadow:
+    -14px -14px 28px #F5F1ED,
+     14px  14px 28px rgba(110,89,82,0.55);
+}
+
+/* ─────────────────────────────────────────
+   CONTACT GRID
+───────────────────────────────────────── */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+.contact-grid div { padding: 12px; font-size: .95rem; }
+
+/* ─────────────────────────────────────────
+   CONTACT BOXES — deep inset wells
+   Deeper (16px) than inputs (6px) = clear nesting
+───────────────────────────────────────── */
+.contact-box {
+  background: #EFE9E3;
+  border-radius: 28px;
+  padding: 35px;
+  box-shadow:
+    inset -10px -10px 22px #F5F1ED,
+    inset  10px  10px 22px rgba(110,89,82,0.55);
+}
+
+/* ─────────────────────────────────────────
+   INPUTS — shallow inset INSIDE contact-box
+   Shallower (6px) than contact-box (16px) = clearly nested
+───────────────────────────────────────── */
+input, textarea {
+  width: 100%;
+  border: none;
+  border-radius: 18px;
+  padding: 14px;
+  margin-bottom: 14px;
+  background: #EFE9E3;
+  color: #6E5952;
+  font-family: 'Poppins', sans-serif;
+  box-shadow:
+    inset -5px -5px 10px #F5F1ED,
+    inset  5px  5px 10px rgba(110,89,82,0.55);
+}
+input::placeholder, textarea::placeholder { color: #9F7A76; }
+input:focus, textarea:focus {
+  outline: none;
+  box-shadow:
+    inset -7px -7px 14px #F5F1ED,
+    inset  7px  7px 14px rgba(110,89,82,0.55);
+}
+
+/* ─────────────────────────────────────────
+   MISC
+───────────────────────────────────────── */
+.contact-social {
+  color: #6E5952;
+  text-decoration: none;
+  transition: .3s;
+  width: 44px; height: 44px;
+  display: inline-flex; align-items: center; justify-content: center;
+  border-radius: 50%;
+  background: #EFE9E3;
+  box-shadow: -5px -5px 10px #F5F1ED, 5px 5px 10px rgba(110,89,82,0.45);
+}
+.contact-social:hover {
+  color: #CFA2A5;
+  box-shadow: inset -4px -4px 8px #F5F1ED, inset 4px 4px 8px rgba(110,89,82,0.45);
+}
+.skill    { font-size: 34px; margin-bottom: 8px; }
+section   { margin-bottom: 70px; }
+img       { border-radius: 18px; cursor: pointer; }
+.logo     { text-decoration: none; }
+.logo-img { height: 30px; width: auto; object-fit: contain; }
+
+/* NAV CTA — rosewood accent */
+.btn.btn-dark {
+  background: #CFA2A5 !important;
+  border-color: #CFA2A5 !important;
+  color: #fff !important;
+  border-radius: 50px;
+  font-weight: 600;
+  box-shadow:
+    -4px -4px 8px #F5F1ED,
+     4px  4px 8px rgba(110,89,82,0.55);
+}
+.btn.btn-dark:hover {
+  background: #6E5952 !important;
+  color: #fff !important;
+}
+
+</style>
 </head>
 
 <body>
 
-    <!--navbar-->
-    <nav class="navbar navbar-expand-lg navbar-custom mx-5 mt-5">
-        <div class="container-fluid px-0">
-            <a class="navbar-brand fw-700 me-auto" href="#">
-                <img src="assets/mylogo.svg" alt="Logo" class="logo-img">
-            </a>
-            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item"><a class="nav-link fw-500 px-3" href="index.html"
-                            style="color: #3a3a3a !important;">Home</a></li>
-                    <li class="nav-item"><a class="nav-link fw-500 px-3" href="#about"
-                            style="color: #3a3a3a !important;">About Me</a></li>
-                    <li class="nav-item"><a class="nav-link fw-500 px-3" href="#projects"
-                            style="color: #3a3a3a !important;">Projects</a></li>
-                </ul>
-            </div>
-            <a href="#contact" class="btn btn-sm fw-600 ms-3"
-                style="background-color: #9f544a; color: white; border-radius: 2rem; padding: 0.5rem 1.5rem;">Contact</a>
-        </div>
-    </nav>
+<div class="dashboard">
 
-    <!--hero-->
-    <section id="home" class="py-5" style="background-color: white;">
-        <div class="container-fluid px-5 py-5">
-            <div class="hero-container pt-5 pb-5">
-                <div class="row g-0 align-items-center">
-                    <div class="col-lg-5 d-flex align-items-center justify-content-center p-5 pt-5 pb-5">
-                        <div style="width: 100%; max-width: 300px;">
-                            <img src="https://via.placeholder.com/300x400?text=Your+Photo" alt="Profile"
-                                class="hero-image" style="width: 100%; height: auto;">
-                        </div>
-                    </div>
-
-                    <div class="col-lg-7 p-5 pt-5 pb-5">
-                        <h1 class="display-4 fw-700 mb-2" style="color: #3a3a3a; line-height: 1.2;">
-                            Crafting Digital Experiences
-                        </h1>
-                        <p class="fs-5 mb-4" style="color: #666666; font-weight: 300; line-height: 1.8;">
-                            I create functional digital solutions that blend creativity with innovation.
-                            Explore my journey through projects that showcase versatility across multiple domains.
-                        </p>
-                        <div class="d-flex gap-3 flex-wrap">
-                            <a href="#about" class="btn fw-600 px-5"
-                                style="background-color: #9f544a; color: white; border-radius: 2rem; padding: 0.75rem 2rem;">View
-                                More</a>
-                            <a href="#certificates" class="btn fw-600 px-5"
-                                style="background-color: #9f544a; color: white; border-radius: 2rem; padding: 0.75rem 2rem;">Certificates</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!--about-->
-    <section id="about" class="py-5" style="background-color: white;">
-        <div class="container-lg px-4 py-5">
-            <h2 class="display-5 fw-700 mb-5" style="color: #3a3a3a;">About Me</h2>
-
-            <div class="row g-4">
-                <div class="col-md-6">
-                    <div class="p-5 h-100"
-                        style="background-color: #eac3bf; border-radius: 2rem; box-shadow: 0 4px 12px rgba(0,0,0,0.06);">
-                        <p class="mb-3 fs-5" style="color: #666666; line-height: 1.8;"><span style="color: #9f544a;">✦
-                                Number:</span> Available Upon Request</p>
-                        <p class="mb-3 fs-5" style="color: #666666; line-height: 1.8;"><span style="color: #9f544a;">✦
-                                Email:</span> balistoymarylouince@gmail.com</p>
-                        <p class="mb-3 fs-5" style="color: #666666; line-height: 1.8;"><span style="color: #9f544a;">✦
-                                Location:</span> Batangas, Philippines</p>
-                        <p class="mb-0 fs-5" style="color: #666666; line-height: 1.8;"><span style="color: #9f544a;">✦
-                                GitHub Portfolio:</span> <br> <a class="fs-6"
-                                href="https://github.com/marylouinceb/marylouinceb.github.io.git" target="_blank"
-                                rel="noopener noreferrer">https://github.com/marylouinceb/marylouinceb.github.io.git</a>
-                        </p>
-                    </div>
-                </div>
-
-                <div class="col-md-6">
-                    <div class="p-5 h-100"
-                        style="background-color: #9f544a; border-radius: 2rem; box-shadow: 0 4px 12px rgba(0,0,0,0.06);">
-                        <p class="mb-3 fs-5" style="color: white; line-height: 1.8;"><span
-                                style="color: #eac3bf;">✦</span> Student at Polytechnic University of the Philippines
-                        </p>
-                        <p class="mb-3 fs-5" style="color: white; line-height: 1.8;"><span
-                                style="color: #eac3bf;">✦</span> Bachelor of Science in Information Technology</p>
-                        <p class="mb-3 fs-5" style="color: white; line-height: 1.8;"><span
-                                style="color: #eac3bf;">✦</span></p>
-                        <p class="mb-3 fs-5" style="color: white; line-height: 1.8;"><span
-                                style="color: #eac3bf;">✦</span></p>
-                        <p class="mb-0 fs-5" style="color: white; line-height: 1.8;"><span
-                                style="color: #eac3bf;">✦</span></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!--projects-->
-    <section id="projects" class="py-5" style="background-color: white;">
-        <div class="container-lg px-4 py-5">
-            <h2 class="display-5 fw-700 mb-5" style="color: #3a3a3a;">Projects</h2>
-            </h2>
-
-            <div class="row g-4 mt-2">
-                <div class="col-md-6 col-lg-4">
-                    <div style="background-color: #eac3bf; border-radius: 2rem; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.08);"
-                        class="h-100 d-flex flex-column">
-                        <div class="p-5 text-center"
-                            style="background: linear-gradient(135deg, #9f544a 0%, #5a3735 100%); color: white;">
-                            <h3 class="fw-700 mb-0">Activities</h3>
-                        </div>
-                        <div class="p-4 flex-grow-1 d-flex flex-column">
-                            <p style="color: #666666; font-weight: 300; line-height: 1.8;">
-                                Academic projects.
-                            </p>
-                            <a href="activities.html" class="btn fw-600 w-100 mt-auto"
-                                style="background-color: #9f544a; color: white; border-radius: 2rem;">View
-                                Projects</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-lg-4">
-                    <div style="background-color: #eac3bf; border-radius: 2rem; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.08);"
-                        class="h-100 d-flex flex-column">
-                        <div class="p-5 text-center"
-                            style="background: linear-gradient(135deg, #9f544a 0%, #5a3735 100%); color: white;">
-                            <h3 class="fw-700 mb-0">Designs</h3>
-                        </div>
-                        <div class="p-4 flex-grow-1 d-flex flex-column">
-                            <p style="color: #666666; font-weight: 300; line-height: 1.8;">
-                                Beautiful UI/UX designs that combine stunning visuals with intuitive functionality.
-                            </p>
-                            <a href="designs.html" class="btn fw-600 w-100 mt-auto"
-                                style="background-color: #9f544a; color: white; border-radius: 2rem;">View
-                                Designs</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-lg-4">
-                    <div style="background-color: #eac3bf; border-radius: 2rem; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.08);"
-                        class="h-100 d-flex flex-column">
-                        <div class="p-5 text-center"
-                            style="background: linear-gradient(135deg, #7a5454 0%, #5a3735 100%); color: white;">
-                            <h3 class="fw-700 mb-0">Websites</h3>
-                        </div>
-                        <div class="p-4 flex-grow-1 d-flex flex-column">
-                            <p style="color: #666666; font-weight: 300; line-height: 1.8;">
-                                Fully functional, responsive websites built with cutting-edge technologies and best
-                                practices.
-                            </p>
-                            <a href="websites.html" class="btn fw-600 w-100 mt-auto"
-                                style="background-color: #9f544a; color: white; border-radius: 2rem;">View
-                                Websites</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!--certificates-->
-    <section id="certificates" class="py-5" style="background-color: #eac3bf;">
-        <div class="container-lg px-4 py-5">
-            <h2 class="display-5 fw-700 mb-5" style="color: #3a3a3a;">Certificates
-            </h2>
-
-            <div class="row g-4">
-                <div class="col-md-6 col-lg-4">
-                    <div
-                        style="background-color: white; border-radius: 2rem; box-shadow: 0 2px 8px rgba(0,0,0,0.04); overflow: hidden;">
-                        <img src="https://via.placeholder.com/400x300?text=Certificate+1" alt="Certificate 1"
-                            class="w-100"
-                            style="height: 250px; object-fit: cover; cursor: pointer; border-radius: 2rem 2rem 0 0;"
-                            onclick="openModal(this.src)">
-                        <div class="p-4">
-                            <h4 class="fw-700 mb-2" style="color: #3a3a3a;">N/A</h4>
-                            <p style="color: #666666; font-weight: 300; font-size: 0.9rem; margin-bottom: 0.5rem;">
-                                Issued by: N/A</p>
-                            <p style="color: #666666; font-weight: 300; font-size: 0.9rem;">Date: N/A
-                            </p>
-                            <small style="color: #9f544a; cursor: pointer;"
-                                onclick="openModal(this.parentElement.parentElement.querySelector('img').src)">Click
-                                image to enlarge →</small>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-lg-4">
-                    <div
-                        style="background-color: white; border-radius: 2rem; box-shadow: 0 2px 8px rgba(0,0,0,0.04); overflow: hidden;">
-                        <img src="https://via.placeholder.com/400x300?text=Certificate+2" alt="Certificate 2"
-                            class="w-100"
-                            style="height: 250px; object-fit: cover; cursor: pointer; border-radius: 2rem 2rem 0 0;"
-                            onclick="openModal(this.src)">
-                        <div class="p-4">
-                            <h4 class="fw-700 mb-2" style="color: #3a3a3a;">N/A</h4>
-                            <p style="color: #666666; font-weight: 300; font-size: 0.9rem; margin-bottom: 0.5rem;">
-                                Issued by: N/A</p>
-                            <p style="color: #666666; font-weight: 300; font-size: 0.9rem;">Date: N/A</p>
-                            <small style="color: #5a3735; cursor: pointer;"
-                                onclick="openModal(this.parentElement.parentElement.querySelector('img').src)">Click
-                                image to enlarge →</small>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-lg-4">
-                    <div
-                        style="background-color: white; border-radius: 2rem; box-shadow: 0 2px 8px rgba(0,0,0,0.04); overflow: hidden;">
-                        <img src="https://via.placeholder.com/400x300?text=Certificate+3" alt="Certificate 3"
-                            class="w-100"
-                            style="height: 250px; object-fit: cover; cursor: pointer; border-radius: 2rem 2rem 0 0;"
-                            onclick="openModal(this.src)">
-                        <div class="p-4">
-                            <h4 class="fw-700 mb-2" style="color: #3a3a3a;">N/A</h4>
-                            <p style="color: #666666; font-weight: 300; font-size: 0.9rem; margin-bottom: 0.5rem;">
-                                Issued by: N/A</p>
-                            <p style="color: #666666; font-weight: 300; font-size: 0.9rem;">Date: N/A
-                            </p>
-                            <small style="color: #9f544a; cursor: pointer;"
-                                onclick="openModal(this.parentElement.parentElement.querySelector('img').src)">Click
-                                image to enlarge →</small>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <div id="certificateModal"
-        style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.8); z-index: 2000; justify-content: center; align-items: center;">
-        <div style="position: relative; max-width: 90%; max-height: 90vh;">
-            <img id="modalImage" src="/placeholder.svg" alt="Full Certificate"
-                style="width: 100%; height: auto; border-radius: 1rem; max-height: 80vh; object-fit: contain;">
-            <button onclick="closeModal()"
-                style="position: absolute; top: -3rem; right: 0; background: white; border: none; border-radius: 50%; width: 3rem; height: 3rem; font-size: 1.5rem; cursor: pointer; display: flex; align-items: center; justify-content: center;">✕</button>
-        </div>
+<!-- NAV -->
+<nav class="nav-soft mb-5">
+  <div class="d-flex justify-content-between align-items-center">
+    <div class="logo">
+      <a>
+        <img src="assets/logo.svg" alt="Logo" class="logo-img">
+      </a>
     </div>
+    <!-- Hamburger (mobile only) -->
+    <button class="btn-soft d-lg-none py-2 px-3 lh-1" type="button"
+            data-bs-toggle="collapse" data-bs-target="#navLinks" aria-expanded="false" aria-label="Toggle navigation">
+      <i class="bi bi-list fs-5"></i>
+    </button>
+    <!-- Desktop links -->
+    <div class="d-none d-lg-flex align-items-center gap-4">
+      <a class="fw-semibold" href="#home">Home</a>
+      <a class="fw-semibold" href="#about">About</a>
+      <a class="fw-semibold" href="#work">Services</a>
+      <a class="fw-semibold" href="#portfolio">Projects</a>
+      <a class="btn btn-dark rounded-5 fw-semibold" style="color:#fff;" href="#contact">Contact</a>
+    </div>
+  </div>
+  <!-- Mobile collapse links -->
+  <div class="collapse d-lg-none" id="navLinks">
+    <div class="d-flex flex-column gap-3 mt-3 pb-1 ps-1">
+      <a class="fw-semibold" href="#home">Home</a>
+      <a class="fw-semibold" href="#about">About</a>
+      <a class="fw-semibold" href="#work">Services</a>
+      <a class="fw-semibold" href="#portfolio">Projects</a>
+      <div>
+        <a class="btn btn-dark rounded-5 fw-semibold" style="color:#fff;" href="#contact">Contact</a>
+      </div>
+    </div>
+  </div>
+</nav>
 
-    <section id="contact" class="py-5" style="background-color: white;">
-        <div class="container-lg px-4 py-5">
-            <h2 class="display-5 fw-700 mb-5" style="color: #3a3a3a;">Get In <span class="accent-medium">Touch</span>
-            </h2>
+<!-- HERO -->
+<section>
+<div id="home" class="row g-5 align-items-center mt-1">
 
-            <div class="row g-5 align-items-center d-flex justify-content-center">
-                <div class="col-lg-6 d-flex flex-column justify-content-center">
-                    <div
-                        style="background: linear-gradient(135deg, #9f544a 0%, #7a5454 100%); border-radius: 2rem; padding: 3rem; color: white;">
-                        <h3 class="fw-700 mb-4">Let's Connect</h3>
-                        <p style="font-weight: 300; line-height: 1.8; margin-bottom: 2rem;">
-                            Have a project in mind or want to collaborate? I'd love to hear from you. Get in touch and
-                            let's create something amazing together!
-                        </p>
+<div class="col-lg-7">
+<h1 class="fw-bold display-6 ps-2">SUPPORTING YOUR BUSINESS WITH CREATIVE DIGITAL SOLUTIONS</h1>
+<p class="fs-5 fw-semibold fst-italic mt-1 ps-2">Visual Designer & Creative Digital Assistant</p>
+<p class="fs-6 fw-normal mt-4 ps-4">Imagine having creative designs that greatly represent your brand—
+  while your daily tasks, contents, and operations are handled well.
+</p>
+<p class="fs-6 fw-normal ps-4">That’s the balance I will help you create. Let's make it happen!
+</p>
 
-                        <div class="mb-4">
-                            <h5 class="fw-600 mb-2">Email</h5>
-                            <a href="mailto:balistoymarylouince@gmail.com"
-                                style="color: #eac3bf; text-decoration: none; font-weight: 300;">balistoymarylouince@gmail.com</a>
-                        </div>
+<div class="mt-5">
+<a class="btn-soft fw-semibold" href="portfolio.html">View My Work</a>
+<a class="btn-soft ms-3 fw-semibold" href="about.html">Hire Me</a>
+</div>
+</div>
 
-                        <div class="mb-4">
-                            <h5 class="fw-600 mb-2">Phone</h5>
-                            <a href="Available Upon Request"
-                                style="color: #eac3bf; text-decoration: none; font-weight: 300;">Available Upon
-                                Request</a>
-                        </div>
+<div class="col-lg-5 text-center">
+<div class="panel mx-auto" style="max-width:320px;">
+<img src="assets/idpic.png" style="width:250px;max-width:100%;" class="rounded-circle mb-3">
+<h5 class="fw-bold mb-3">Mary Louince Balistoy</h5>
+<p class="small text-muted mb-1 fw-semibold">Creative Digital Assistant</p>
+<p class="small text-muted fw-semibold">Visual Designer</p>
+</div>
+</div>
 
-                        <div class="mb-4">
-                            <h5 class="fw-600 mb-2">Location</h5>
-                            <p style="font-weight: 300; margin-bottom: 0;">Batangas, Philippines</p>
-                        </div>
+</div>
+</section>
 
-                        <div class="mt-3">
-                            <h5 class="fw-600 mb-3">Follow Me</h5>
-                            <div class="d-flex gap-3">
-                                <a href="#"
-                                    style="color: #eac3bf; text-decoration: none; font-size: 1.2rem; width: 2.5rem; height: 2.5rem; display: flex; align-items: center; justify-content: center; border-radius: 50%; background-color: rgba(255,255,255,0.1); transition: all 0.3s ease;">
-                                    f
-                                </a>
-                                <a href="#"
-                                    style="color: #eac3bf; text-decoration: none; font-size: 1.2rem; width: 2.5rem; height: 2.5rem; display: flex; align-items: center; justify-content: center; border-radius: 50%; background-color: rgba(255,255,255,0.1); transition: all 0.3s ease;">
-                                    𝕏
-                                </a>
-                                <a href="#"
-                                    style="color: #eac3bf; text-decoration: none; font-size: 1.2rem; width: 2.5rem; height: 2.5rem; display: flex; align-items: center; justify-content: center; border-radius: 50%; background-color: rgba(255,255,255,0.1); transition: all 0.3s ease;">
-                                    in
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+<!-- ABOUT -->
+<section id="about">
+<div class="about-section">
+<h5 class="fw-bold mb-3 mt-3 ps-3" style="color:#6E5952;">Hi, I’m Mary Louince!</h5>
+<p class="text-muted ps-4 pe-3" style="color:#9F7A76;">
+Building something meaningful requires more than great visuals— 
+  it takes effective organization, creative content, and purposeful design working together.
+</p>
+<p class="text-muted ps-4 pe-3" style="color:#9F7A76;">
+As a Creative Virtual Assistant and Visual Designer, I support businesses with both organization 
+and creativity in handling the day-to-day tasks and also creating visuals that keep your brand 
+consistent and recognizable. I help manage workflows, organize systems, and design brand materials 
+that feel aligned with your vision. I value clarity, consistency, and purposeful execution and my 
+goal isn’t to overcomplicate your business — it’s to simplify it, support it, and strengthen it.
+</p>
+<p class="text-muted ps-4 pe-3" style="color:#9F7A76;">
+I give creative support, made reliable. 
+</p>
 
-                <div class="col-lg-6 d-flex flex-column justify-content-center">
-                    <form style="background-color: #eac3bf; border-radius: 2rem; padding: 2rem;">
-                        <div class="mb-4">
-                            <label for="name fw-bold" class="form-label fw-600" style="color: #3a3a3a;">Full
-                                Name</label>
-                            <input type="text" class="form-control" id="name" placeholder="Your Name"
-                                style="border: none; border-bottom: 2px solid #b77d77; background-color: transparent; border-radius: 0; padding: 0.5rem 0; color: #9f544a;">
-                        </div>
 
-                        <div class="mb-4">
-                            <label for="email fw-bold" class="form-label fw-600" style="color: #3a3a3a;">Email
-                                Address</label>
-                            <input type="email" class="form-control" id="email" placeholder="your.email@example.com"
-                                style="border: none; border-bottom: 2px solid #b77d77; background-color: transparent; border-radius: 0; padding: 0.5rem 0; color: #9f544a;">
-                        </div>
+<div class="d-flex flex-wrap gap-4 mt-5 content-center justify-content-center mb-1">
+<button class="btn-soft btn-sm fw-semibold" onclick="window.open('about.html', '_blank')">About Me <i class="bi bi-box-arrow-up-right" style="font-size:.8rem;"></i></button>
+<button class="btn-soft btn-sm fw-semibold" onclick="window.open('assets/Mary Louince Balistoy CV.pdf', '_blank')">CV</button>
+<button class="btn-soft btn-sm fw-semibold" onclick="showAbout('certs')">Certificates</button>
+<button class="btn-soft btn-sm fw-semibold" onclick="showAbout('skills')">Tools & Skills</button>
+<!-- <button class="btn-soft btn-sm" onclick="showAbout('pricing')">Pricing</button> -->
+</div>
 
-                        <div class="mb-4">
-                            <label for="subject fw-bold" class="form-label fw-600"
-                                style="color: #3a3a3a;">Subject</label>
-                            <input type="text" class="form-control" id="subject" placeholder="Project Inquiry"
-                                style="border: none; border-bottom: 2px solid #b77d77; background-color: transparent; border-radius: 0; padding: 0.5rem 0; color: #9f544a;">
-                        </div>
+<div class="mt-4">
 
-                        <div class="mb-4">
-                            <label for="message fw-bold" class="form-label fw-600"
-                                style="color: #3a3a3a;">Message</label>
-                            <textarea class="form-control" id="message" rows="4"
-                                placeholder="Tell me about your project..."
-                                style="border: none; border-bottom: 2px solid #b77d77; background-color: transparent; border-radius: 0; padding: 0.5rem 0; color: #9f544a; resize: none;"></textarea>
-                        </div>
+<div id="default" class="text-center mt-5 mb-1">Select a section above.</div>
 
-                        <button type="submit fw-bold" class="btn fw-600 w-100 mt-4"
-                            style="background-color: #9f544a; color: white; border-radius: 2rem; padding: 0.75rem 2rem; border: none; transition: all 0.3s ease;">Send
-                            Message</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
+<div id="certs" class="d-none row g-3 mt-2">
+<div class="col-12 col-md-4"><img src="assets/DataScienceCert.png" class="img-fluid" onclick="openViewer(this.src)" style="cursor:pointer;"></div>
+<div class="col-12 col-md-4"><img src="assets/NetBasicsCert.png" class="img-fluid" onclick="openViewer(this.src)" style="cursor:pointer;"></div>
+<div class="col-12 col-md-4"><img src="assets/TechNexus.png" class="img-fluid" onclick="openViewer(this.src)" style="cursor:pointer;"></div>
 
-    <footer class="py-5"
-        style="background-color: #5a3735; color: white; border-radius: 3rem 3rem 0 0; margin-top: 5rem;">
-        <div class="container-lg px-4 text-center">
-            <div class="mb-4">
-                <a href="index.html" class="text-decoration-none fw-500 me-4" style="color: #eac3bf;">Home</a>
-                <a href="#about" class="text-decoration-none fw-500 me-4" style="color: #eac3bf;">About</a>
-                <a href="#projects" class="text-decoration-none fw-500" style="color: #eac3bf;">Projects</a>
-            </div>
-            <p class="mb-0" style="font-weight: 300; font-size: 0.95rem;">&copy; 2025 Studio.ML | Mary Louince
-                Portfolio. All Rights Reserved.</p>
-        </div>
-    </footer>
+<div class="col-12 text-center mt-5 mb-4">
+<a href="about.html#certificates" class="btn-soft btn-sm fw-semibold" style="color:#6E5952;">View All Awards</a>
+</div>
+</div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<div id="skills" class="d-none row g-4 text-center mt-2">
 
-    <script>
-        function openModal(imageSrc) {
-            const modal = document.getElementById('certificateModal');
-            const modalImage = document.getElementById('modalImage');
-            modalImage.src = imageSrc;
-            modal.style.display = 'flex';
-        }
+<div class="col-6 col-md-3"><div class="soft-card"><i class="bi bi-filetype-html skill"></i><p>HTML</p></div></div>
+<div class="col-6 col-md-3"><div class="soft-card"><i class="bi bi-filetype-css skill"></i><p>CSS</p></div></div>
+<div class="col-6 col-md-3"><div class="soft-card"><i class="bi bi-filetype-js skill"></i><p>JavaScript</p></div></div>
+<div class="col-6 col-md-3"><div class="soft-card"><i class="bi bi-database skill"></i><p>SQL Basics</p></div></div>
 
-        function closeModal() {
-            const modal = document.getElementById('certificateModal');
-            modal.style.display = 'none';
-        }
+<div class="col-6 col-md-3"><div class="soft-card"><i class="bi bi-pencil-square skill"></i><p>Figma</p></div></div>
+<div class="col-6 col-md-3"><div class="soft-card"><i class="bi bi-brush skill"></i><p>Canva</p></div></div>
+<div class="col-6 col-md-3"><div class="soft-card"><i class="bi bi-journal skill"></i><p>Notion</p></div></div>
+<div class="col-6 col-md-3"><div class="soft-card"><i class="bi bi-google skill"></i><p>Google Workspace</p></div></div>
 
-        document.getElementById('certificateModal').addEventListener('click', function (e) {
-            if (e.target === this) closeModal();
-        });
+</div>
 
-        document.addEventListener('keydown', function (e) {
-            if (e.key === 'Escape') closeModal();
-        });
-    </script>
+</div>
+</div><!-- end about-section -->
+</section>
+
+<section id="work">
+<h3 class="fw-bold mt-5 mb-5 text-center">What I Do</h3>
+
+<!-- Service 1 -->
+<div class="row g-4 align-items-center mb-5">
+  <div class="col-lg-5">
+    <div class="service-card text-center">
+      <i class="bi bi-brush" style="font-size:80px;"></i>
+    </div>
+  </div>
+  <div class="col-lg-7">
+    <div style="padding: 1rem 1.5rem;">
+      <span style="font-size:.8rem;font-weight:600;letter-spacing:2px;color:#9F7A76;text-transform:uppercase;">01</span>
+      <h4 class="fw-bold mt-1 mb-3">Social Media & Content Design</h4>
+      <p style="color:#9F7A76;line-height:1.8;font-size:.95rem;">I design graphics that look and feel like your brand 
+        — the colors, the layout, the details. From post and story graphics to feed planning, caption writing, content 
+        calendars, and hashtag research, everything is handled so your feed stays consistent, sounds like you, and 
+        actually goes out on time.</p>
+    </div>
+  </div>
+</div>
+
+<!-- Service 2 - Reversed -->
+<div class="row g-4 align-items-center mb-5">
+  <div class="col-lg-5 order-lg-2">
+    <div class="service-card text-center">
+      <i class="bi bi-stars" style="font-size:80px;"></i>
+    </div>
+  </div>
+  <div class="col-lg-7 order-lg-1">
+    <div style="padding: 1rem 1.5rem;">
+      <span style="font-size:.8rem;font-weight:600;letter-spacing:2px;color:#9F7A76;text-transform:uppercase;">02</span>
+      <h4 class="fw-bold mt-1 mb-3">Brand & Visual Identity</h4>
+      <p style="color:#9F7A76;line-height:1.8;font-size:.95rem;">I design pages and screens that are comfortable to 
+        look at and simple to navigate. Landing pages, portfolio layouts, app screens, Figma wireframes, design system 
+        components — kept clean, elegant, and shaped around your brand so the experience feels as intentional as the 
+        design itself.</p>
+    </div>
+  </div>
+</div>
+
+<!-- Service 3 -->
+<div class="row g-4 align-items-center mb-5">
+  <div class="col-lg-5">
+    <div class="service-card text-center">
+      <i class="bi bi-person-workspace" style="font-size:80px;"></i>
+    </div>
+  </div>
+  <div class="col-lg-7">
+    <div style="padding: 1rem 1.5rem;">
+      <span style="font-size:.8rem;font-weight:600;letter-spacing:2px;color:#9F7A76;text-transform:uppercase;">03</span>
+      <h4 class="fw-bold mt-1 mb-3">Digital Assistance</h4>
+      <p style="color:#9F7A76;line-height:1.8;font-size:.95rem;">I handle the quieter side of your business — 
+        the organizing, tracking, and communicating that keeps everything running. Inbox management, research, 
+        data gathering, spreadsheets, file organization, client communication, basic reporting — small tasks, 
+        done well, so nothing slips through.</p>
+    </div>
+  </div>
+</div>
+
+<!-- Service 4 - Reversed -->
+<div class="row g-4 align-items-center mb-5">
+  <div class="col-lg-5 order-lg-2">
+    <div class="service-card text-center">
+      <i class="bi bi-layout-text-window" style="font-size:80px;"></i>
+    </div>
+  </div>
+  <div class="col-lg-7 order-lg-1">
+    <div style="padding: 1rem 1.5rem;">
+      <span style="font-size:.8rem;font-weight:600;letter-spacing:2px;color:#9F7A76;text-transform:uppercase;">04</span>
+      <h4 class="fw-bold mt-1 mb-3">UI/UX & Frontend Design</h4>
+      <p style="color:#9F7A76;line-height:1.8;font-size:.95rem;">I design pages and screens that are comfortable to 
+        look at and simple to navigate — then build them too. From Figma wireframes and landing page layouts to clean, 
+        handcoded frontends in HTML and CSS, everything is shaped around your brand so the experience feels as 
+        intentional as the design itself.
+</p>
+    </div>
+  </div>
+</div>
+
+</section>
+
+<!-- PORTFOLIO -->
+<section id="portfolio">
+
+<h3 class="fw-bold mb-4 text-center mb-5">Featured Works</h3>
+
+<div class="row g-4 mb-5 mt-5">
+
+<div class="col-12 col-md-4">
+<img src="assets/tbeveryday.png" class="img-fluid work-img"
+onclick="openViewer(this.src)">
+</div>
+
+<div class="col-12 col-md-4">
+<img src="assets/tbig.png" class="img-fluid work-img"
+onclick="openViewer(this.src)">
+</div>
+
+<div class="col-12 col-md-4">
+<img src="assets/tbdo.png" class="img-fluid work-img"
+onclick="openViewer(this.src)">
+</div>
+
+</div>
+
+<div class="text-center mt-3 mb-5">
+<a href="works.html" class="btn-soft fw-semibold" style="color:#6E5952;">View All Projects</a>
+</div>
+
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+
+<h3 class="fw-bold mt-3 mb-5 text-center">Let’s Work Together</h3>
+
+<div class="contact-box mx-auto text-center" style="max-width:1000px;">
+
+  <p class="fst-italic mb-4 mt-4" style="font-size:.8rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:#CFA2A5;">Open for opportunities</p>
+  <h4 class="fw-bold mt-2 mb-1">Ready to bring your vision to life?</h4>
+  <p class="text-muted mb-5" style="line-height:1.8;">
+    Let’s create something great together!
+  </p>
+
+  <div class="d-flex flex-column gap-3 align-items-center mb-2">
+    <i class="bi bi-cash-coin me-2 text-center" style="color:#6E5952; font-size:25px;"></i>
+    <p class="text-center fw-semibold" style="color:#6E5952;font-size:.9rem;">Accepted via GCash, Maya, PayPal, or Bank Transfer. <br>
+      Rates are upon request and vary depending on the project scope.</p>
+</p>
+
+    <!--<span><i class="bi bi-envelope-heart me-2" style="color:#CFA2A5; font-size:20px;"></i>balistoymarylouince@gmail.com</span>
+    <span><i class="bi bi-phone me-2" style="color:#CFA2A5; font-size:20px;"></i>Available Upon request</span>
+    <span><i class="bi bi-geo-alt me-2" style="color:#CFA2A5; font-size:20px;"></i>City of Santo Tomas, Batangas, Philippines</span> -->
+  </div>
+
+  <div class="mt-3 mb-5">
+    <a href="https://mail.google.com/mail/?view=cm&to=balistoymarylouince@gmail.com" target="_blank" class="btn-soft fw-semibold">Message Me ✉</a>
+  </div>
+
+  <div style="font-size:22px;" class="d-flex justify-content-center gap-3 mb-3">
+    <a href="#" class="contact-social  mt-3"><i class="bi bi-facebook"></i></a>
+    <a href="#" class="contact-social  mt-3"><i class="bi bi-instagram"></i></a>
+    <a href="#" class="contact-social  mt-3"><i class="bi bi-linkedin"></i></a>
+    <a href="#" class="contact-social  mt-3"><i class="bi bi-github"></i></a>
+    <a href="#" class="contact-social  mt-3"><i class="bi bi-google"></i></a>
+  </div>
+
+</div>
+</section>
+
+<div class="text-center mt-3 mb-3">
+  <p class="text-muted fw-semibold" style="font-size:.9rem;">© 2026 SoLou. | Mary Louince Balistoy. All Rights Reserved.</p>
+</div>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script><script>
+
+function showAbout(id){
+  var target = document.getElementById(id);
+  var isVisible = !target.classList.contains('d-none');
+  ['default','certs','skills'].forEach(x=>{
+    document.getElementById(x).classList.add('d-none');
+  });
+  if(isVisible){
+    document.getElementById('default').classList.remove('d-none');
+  } else {
+    target.classList.remove('d-none');
+  }
+}
+
+function openViewer(src){
+  document.getElementById('viewerImg').src = src;
+  var viewer = document.getElementById('imageViewer');
+  viewer.style.display = 'flex';
+  document.body.style.overflow = 'hidden';
+}
+
+function closeViewer(){
+  document.getElementById('imageViewer').style.display = 'none';
+  document.getElementById('viewerImg').src = '';
+  document.body.style.overflow = '';
+}
+
+document.addEventListener('keydown',function(e){
+  if(e.key==='Escape') closeViewer();
+});
+
+</script>
+</div><!-- end dashboard -->
+
+<!-- IMAGE VIEWER — must be outside .dashboard to escape backdrop-filter stacking context -->
+<div id="imageViewer" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.85);z-index:9999;align-items:center;justify-content:center;" onclick="closeViewer()">
+  <button onclick="closeViewer()" style="position:absolute;top:20px;right:24px;background:rgba(255,255,255,.15);border:none;color:#fff;font-size:28px;cursor:pointer;border-radius:50%;width:44px;height:44px;">✕</button>
+  <img id="viewerImg" src="" style="max-width:90vw;max-height:90vh;border-radius:16px;object-fit:contain;">
+</div>
 </body>
-
 </html>

@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>SoLou. | Works</title>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="icon" type="image/x-icon" href="assets/logo.svg">
+
+<style>
+
+* { box-sizing: border-box; }
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #F5F1ED;
+  min-height: 100vh;
+  padding: 40px 15px;
+  color: #6E5952;
+}
+
+h1,h2,h3,h4,h5,h6     { color: #6E5952; }
+p, span, li            { color: #6E5952; }
+a                      { color: #6E5952; }
+.text-muted            { color: #9F7A76 !important; }
+.fw-bold, .fw-semibold { color: #6E5952; }
+.fst-italic            { color: #9F7A76 !important; }
+small                  { color: #9F7A76; }
+section                { margin-bottom: 60px; }
+
+/* ─── DASHBOARD ─── */
+.dashboard {
+  max-width: 1200px;
+  margin: auto;
+  padding: 40px;
+  border-radius: 40px;
+  background: #EFE9E3;
+  box-shadow:
+    -20px -20px 40px #F5F1ED,
+      20px  20px 40px rgba(110,89,82,0.55);
+}
+
+/* ─── NAV ─── */
+.nav-soft {
+  background: #EFE9E3;
+  padding: 15px 30px;
+  border-radius: 50px;
+  box-shadow:
+    -8px -8px 18px #F5F1ED,
+     8px  8px 18px rgba(110,89,82,0.55);
+}
+.nav-soft a { color: #6E5952; font-weight: 500; text-decoration: none; }
+.nav-soft a:hover { opacity: .65; }
+
+/* ─── BUTTONS ─── */
+.btn-soft {
+  background: #EFE9E3;
+  border: none;
+  padding: 10px 24px;
+  border-radius: 50px;
+  box-shadow:
+    -6px -6px 12px #F5F1ED,
+     6px  6px 12px rgba(110,89,82,0.55);
+  transition: .3s ease;
+  text-decoration: none;
+  color: #6E5952;
+  display: inline-block;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+  font-size: inherit;
+  font-weight: 500;
+}
+.btn-soft:hover {
+  box-shadow:
+    inset -5px -5px 10px #F5F1ED,
+    inset  5px  5px 10px rgba(110,89,82,0.55);
+  transform: translateY(1px);
+  color: #6E5952;
+}
+.btn.btn-dark {
+  background: #CFA2A5 !important;
+  border-color: #CFA2A5 !important;
+  color: #fff !important;
+  border-radius: 50px;
+  font-weight: 600;
+  box-shadow: -4px -4px 8px #F5F1ED, 4px 4px 8px rgba(110,89,82,0.55);
+}
+.btn.btn-dark:hover { background: #6E5952 !important; color: #fff !important; }
+
+/* ─── CATEGORY PILLS ─── */
+.cat-btn {
+  background: #EFE9E3;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 50px;
+  font-family: 'Poppins', sans-serif;
+  font-size: .82rem;
+  font-weight: 600;
+  color: #6E5952;
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+  box-shadow:
+    -6px -6px 12px #F5F1ED,
+     6px  6px 12px rgba(110,89,82,0.45);
+  transition: .3s ease;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.cat-btn:hover {
+  color: #6E5952;
+  box-shadow:
+    -8px -8px 16px #F5F1ED,
+     8px  8px 16px rgba(110,89,82,0.55);
+}
+.cat-btn.active {
+  box-shadow:
+    inset -5px -5px 10px #F5F1ED,
+    inset  5px  5px 10px rgba(110,89,82,0.55);
+  color: #6E5952;
+}
+.cat-btn i { font-size: 15px; flex-shrink: 0; }
+
+.project-card {
+  background: #EFE9E3;
+  border-radius: 22px;
+  overflow: hidden;
+  box-shadow:
+    -8px -8px 16px #F5F1ED,
+     8px  8px 16px rgba(110,89,82,0.55);
+  transition: .4s ease;
+  cursor: pointer;
+}
+.project-card:hover {
+  transform: translateY(-6px);
+  box-shadow:
+    -12px -12px 24px #F5F1ED,
+     12px  12px 24px rgba(110,89,82,0.55);
+}
+.project-card img {
+  width: 100%;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  display: block;
+  border-radius: 0;
+  transition: .4s ease;
+}
+.project-card:hover img { transform: scale(1.04); }
+.project-card-body {
+  padding: 14px 16px 16px;
+}
+.project-card-body p {
+  font-size: .75rem;
+  color: #9F7A76;
+  margin: 0;
+}
+.project-card-body h6 {
+  font-size: .88rem;
+  font-weight: 600;
+  color: #6E5952;
+  margin: 0 0 4px;
+}
+
+/* ─── PROJECT LINK BUTTON ─── */
+.project-link-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: .75rem;
+  font-weight: 600;
+  color: #6E5952;
+  text-decoration: none;
+  background: #EFE9E3;
+  padding: 6px 14px;
+  border-radius: 50px;
+  box-shadow:
+    -4px -4px 8px #F5F1ED,
+     4px  4px 8px rgba(110,89,82,0.45);
+  transition: .3s ease;
+}
+.project-link-btn:hover {
+  box-shadow:
+    inset -3px -3px 6px #F5F1ED,
+    inset  3px  3px 6px rgba(110,89,82,0.45);
+  color: #CFA2A5;
+  transform: translateY(1px);
+}
+.project-link-btn i { font-size: .72rem; }
+.empty-state {
+  text-align: center;
+  padding: 60px 20px;
+  color: #9F7A76;
+  font-size: .9rem;
+}
+.empty-state i { font-size: 40px; color: #CFA2A5; margin-bottom: 16px; display: block; }
+
+/* ─── ACCENT LABEL ─── */
+.accent-label {
+  font-size: .78rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  color: #CFA2A5;
+  text-transform: uppercase;
+  display: block;
+}
+
+/* ─── CONTACT ─── */
+.contact-box {
+  background: #EFE9E3;
+  border-radius: 28px;
+  padding: 35px;
+  box-shadow:
+    inset -10px -10px 22px #F5F1ED,
+    inset  10px  10px 22px rgba(110,89,82,0.55);
+}
+.contact-social {
+  color: #6E5952;
+  text-decoration: none;
+  transition: .3s;
+  width: 44px; height: 44px;
+  display: inline-flex; align-items: center; justify-content: center;
+  border-radius: 50%;
+  background: #EFE9E3;
+  box-shadow: -5px -5px 10px #F5F1ED, 5px 5px 10px rgba(110,89,82,0.45);
+}
+.contact-social:hover {
+  color: #CFA2A5;
+  box-shadow: inset -4px -4px 8px #F5F1ED, inset 4px 4px 8px rgba(110,89,82,0.45);
+}
+
+/* ─── MISC ─── */
+.logo { text-decoration: none; }
+.logo-img { height: 30px; width: auto; object-fit: contain; }
+
+/* ─── RESPONSIVE ─── */
+@media (max-width: 991.98px) {
+  .cat-btn { width: auto; }
+  .category-sidebar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 28px;
+  }
+}
+@media (max-width: 767.98px) {
+  body { padding: 20px 10px; }
+  .dashboard { padding: 24px 16px; border-radius: 28px; }
+}
+@media (max-width: 575.98px) {
+  .dashboard { padding: 18px 12px; border-radius: 22px; }
+}
+
+</style>
+</head>
+
+<body>
+<div class="dashboard">
+
+<!-- NAV -->
+<nav class="nav-soft mb-5">
+  <div class="d-flex justify-content-between align-items-center">
+    <div class="logo">
+      <a href="index.html">
+        <img src="assets/logo.svg" alt="Logo" class="logo-img">
+      </a>
+    </div>
+    <button class="btn-soft d-lg-none py-2 px-3 lh-1" type="button"
+            data-bs-toggle="collapse" data-bs-target="#navLinks" aria-expanded="false" aria-label="Toggle navigation">
+      <i class="bi bi-list fs-5"></i>
+    </button>
+    <div class="d-none d-lg-flex align-items-center gap-4">
+      <a class="fw-semibold" href="index.html">Home</a>
+      <a class="fw-semibold" href="about.html">About</a>
+      <a class="fw-semibold" href="index.html#work">Services</a>
+      <a class="btn btn-dark rounded-5 fw-semibold" style="color:#fff;" href="#contact">Contact</a>
+    </div>
+  </div>
+  <div class="collapse d-lg-none" id="navLinks">
+    <div class="d-flex flex-column gap-3 mt-3 pb-1 ps-1">
+      <a class="fw-semibold" href="index.html">Home</a>
+      <a class="fw-semibold" href="about.html">About</a>
+      <a class="fw-semibold" href="index.html#work">Services</a>
+      <div>
+        <a class="btn btn-dark rounded-5 fw-semibold" style="color:#fff;" href="#contact">Contact</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- PAGE HEADER -->
+<section>
+  <span class="accent-label mb-2">Portfolio</span>
+  <h3 class="fw-bold mt-2 mb-1">My Works</h3>
+  <p class="text-muted" style="font-size:.95rem; line-height:1.8; max-width:580px;">
+    A curated collection of projects across design, writing, and digital work — each one built with intention.
+  </p>
+</section>
+
+<!-- MAIN LAYOUT: sidebar + grid -->
+<section>
+<div class="row g-4 align-items-start">
+
+  <!-- CATEGORY SIDEBAR -->
+  <div class="col-12 col-lg-3">
+    <div class="category-sidebar d-lg-flex flex-column gap-3">
+
+      <button class="cat-btn active" onclick="filterProjects('all', this)">
+        <i class="bi bi-grid-3x3-gap"></i> All Works
+      </button>
+      <button class="cat-btn" onclick="filterProjects('branding', this)">
+        <i class="bi bi-stars"></i> Branding & Visual Identity
+      </button>
+      <button class="cat-btn" onclick="filterProjects('uiux', this)">
+        <i class="bi bi-layout-text-window"></i> UI/UX & Web Design
+      </button>
+      <button class="cat-btn" onclick="filterProjects('content', this)">
+        <i class="bi bi-brush"></i> Content & Social Media
+      </button>
+      <button class="cat-btn" onclick="filterProjects('editorial', this)">
+        <i class="bi bi-book"></i> Editorial & Publication
+      </button>
+      <button class="cat-btn" onclick="filterProjects('writing', this)">
+        <i class="bi bi-pen"></i> Writing & Copywriting
+      </button>
+      <button class="cat-btn" onclick="filterProjects('digital', this)">
+        <i class="bi bi-person-workspace"></i> Digital Assistance
+      </button>
+
+    </div>
+  </div>
+
+  <!-- PROJECT GRID -->
+  <div class="col-12 col-lg-9">
+    <div class="row g-4" id="projectGrid">
+
+      <!--BRANDING & VISUAL IDENTITY Replace src with your image files-->
+      <div class="col-12 col-sm-6 col-md-4 project-item" data-category="branding">
+        <div class="project-card" onclick="openViewer('assets/tblogo.png')">
+          <img src="assets/tblogo.png" alt="Project">
+          <div class="project-card-body">
+            <h6>The Brew Logo</h6>
+            <p>Branding & Visual Identity</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-sm-6 col-md-4 project-item" data-category="branding">
+        <div class="project-card" onclick="openViewer('assets/mllogo.png')">
+          <img src="assets/mllogo.png" alt="Project">
+          <div class="project-card-body">
+            <h6>ML Logo</h6>
+            <p>Branding & Visual Identity</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-sm-6 col-md-4 project-item" data-category="branding">
+        <div class="project-card" onclick="openViewer('assets/logo.svg')">
+          <img src="assets/logo.svg" alt="Project">
+          <div class="project-card-body">
+            <h6>SoLou. Logo</h6>
+            <p>Branding & Visual Identity</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="row g-4" id="projectGrid">
+
+      <div class="col-12 col-sm-6 col-md-4 project-item" data-category="branding">
+        <div class="project-card" onclick="openViewer('assets/kasalilogo.png')">
+          <img src="assets/kasalilogo.png" alt="Project">
+          <div class="project-card-body">
+            <h6>Kasali Logo</h6>
+            <p>Branding & Visual Identity</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-sm-6 col-md-4 project-item" data-category="branding">
+        <div class="project-card" onclick="openViewer('assets/kasalilogo2.png')">
+          <img src="assets/kasalilogo2.png" alt="Project">
+          <div class="project-card-body">
+            <h6>Kasali Logo 2</h6>
+            <p>Branding & Visual Identity</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-sm-6 col-md-4 project-item" data-category="branding">
+        <div class="project-card" onclick="openViewer('assets/loulogo.png')">
+          <img src="assets/loulogo.png" alt="Project">
+          <div class="project-card-body">
+            <h6>Lou Sells Logo</h6>
+            <p>Branding & Visual Identity</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="row g-4" id="projectGrid">
+
+      <!--BRANDING & VISUAL IDENTITY Replace src with your image files-->
+      <div class="col-12 col-sm-6 col-md-4 project-item" data-category="branding">
+        <div class="project-card" onclick="openViewer('assets/inprologo.png')">
+          <img src="assets/inprologo.png" alt="Project">
+          <div class="project-card-body">
+            <h6>Insight Productions Logo</h6>
+            <p>Branding & Visual Identity</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-sm-6 col-md-4 project-item" data-category="branding">
+        <div class="project-card" onclick="openViewer('assets/discoverlylogo.png')">
+          <img src="assets/discoverlylogo.png" alt="Project">
+          <div class="project-card-body">
+            <h6>Discoverly Logo</h6>
+            <p>Branding & Visual Identity</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-sm-6 col-md-4 project-item" data-category="branding">
+        <div class="project-card" onclick="openViewer('assets/project-placeholder.png')">
+          <img src="assets/project-placeholder.png" alt="Project">
+          <div class="project-card-body">
+            <h6>Project Title</h6>
+            <p>Branding & Visual Identity</p>
+          </div>
+        </div>
+      </div>
+
+      <!--UI/UX & WEB DESIGN-->
+      <div class="col-12 col-sm-6 col-md-4 project-item" data-category="uiux">
+        <div class="project-card">
+          <img src="assets/spacebg.png" alt="Project" onclick="openViewer('assets/spacebg.png')">
+          <div class="project-card-body">
+            <h6>Mission Space Today</h6>
+            <p class="mb-2">UI/UX & Web Design</p>
+            <a href="https://marylouinceb.github.io/mission-space-today-api/" target="_blank" class="project-link-btn">
+              <i class="bi bi-box-arrow-up-right"></i> View Live
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-sm-6 col-md-4 project-item" data-category="uiux">
+        <div class="project-card">
+          <img src="assets/bannerflower.jpg" alt="Project" onclick="openViewer('assets/bannerflower.jpg')">
+          <div class="project-card-body">
+            <h6>Sincerely, Flower</h6>
+            <p class="mb-2">UI/UX & Web Design</p>
+            <a href="https://marylouinceb.github.io/sincerely-flower-gallery/" target="_blank" class="project-link-btn">
+              <i class="bi bi-box-arrow-up-right"></i> View Live
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-sm-6 col-md-4 project-item" data-category="uiux">
+        <div class="project-card">
+          <img src="assets/headercanon.png" alt="Project" onclick="openViewer('assets/headercanon.png')">
+          <div class="project-card-body">
+            <h6>SheTech: Canon EOS R10</h6>
+            <p class="mb-2">UI/UX & Web Design</p>
+            <a href="https://marylouinceb.github.io/product-web-project/" target="_blank" class="project-link-btn">
+              <i class="bi bi-box-arrow-up-right"></i> View Live
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- ─────────────────────────────────
+           CONTENT & SOCIAL MEDIA DESIGN
+      ───────────────────────────────────── -->
+      <div class="col-12 col-sm-6 col-md-4 project-item" data-category="content">
+        <div class="project-card" onclick="openViewer('assets/tbeveryday.png')">
+          <img src="assets/tbeveryday.png" alt="Project">
+          <div class="project-card-body">
+            <h6>The Brew: Everyday Brew</h6>
+            <p>Content & Social Media Design</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-sm-6 col-md-4 project-item" data-category="content">
+        <div class="project-card" onclick="openViewer('assets/tbdo.png')">
+          <img src="assets/tbdo.png" alt="Project">
+          <div class="project-card-body">
+            <h6>The Brew: Do the Brew</h6>
+            <p>Content & Social Media Design</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-sm-6 col-md-4 project-item" data-category="content">
+        <div class="project-card" onclick="openViewer('assets/tbig.png')">
+          <img src="assets/tbig.png" alt="Project">
+          <div class="project-card-body">
+            <h6>The Brew: Iced Caramel Latte</h6>
+            <p>Content & Social Media Design</p>
+          </div>
+        </div>
+      </div>
+
+      <!--EDITORIAL & PUBLICATION DESIGN-->
+      <div class="col-12 col-sm-6 col-md-4 project-item" data-category="editorial">
+        <div class="project-card" onclick="openViewer('assets/toh.png')">
+          <img src="assets/toh.png" alt="Project">
+          <div class="project-card-body">
+            <h6>Thorns of Helena</h6>
+            <p>Editorial & Publication Design</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-sm-6 col-md-4 project-item" data-category="editorial">
+        <div class="project-card" onclick="openViewer('assets/tfb.png')">
+          <img src="assets/tfb.png" alt="Project">
+          <div class="project-card-body">
+            <h6>To Fail Better</h6>
+            <p>Editorial & Publication Design</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-sm-6 col-md-4 project-item" data-category="editorial">
+        <div class="project-card" onclick="openViewer('assets/cwmwtss.png')">
+          <img src="assets/cwmwtss.png" alt="Project">
+          <div class="project-card-body">
+            <h6>Come to Me when the Sun Sets</h6>
+            <p>Editorial & Publication Design</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ─────────────────────────────────
+           WRITING & COPYWRITING
+      ───────────────────────────────────── -->
+      <div class="col-12 col-sm-6 col-md-4 project-item" data-category="writing">
+        <div class="project-card" onclick="openViewer('assets/project-placeholder.png')">
+          <img src="assets/project-placeholder.png" alt="Project">
+          <div class="project-card-body">
+            <h6>Project Title</h6>
+            <p>Writing & Copywriting</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-sm-6 col-md-4 project-item" data-category="writing">
+        <div class="project-card" onclick="openViewer('assets/project-placeholder.png')">
+          <img src="assets/project-placeholder.png" alt="Project">
+          <div class="project-card-body">
+            <h6>Project Title</h6>
+            <p>Writing & Copywriting</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-sm-6 col-md-4 project-item" data-category="writing">
+        <div class="project-card" onclick="openViewer('assets/project-placeholder.png')">
+          <img src="assets/project-placeholder.png" alt="Project">
+          <div class="project-card-body">
+            <h6>Project Title</h6>
+            <p>Writing & Copywriting</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ─────────────────────────────────
+           DIGITAL ASSISTANCE & ADMIN WORK
+      ───────────────────────────────────── -->
+      <div class="col-12 col-sm-6 col-md-4 project-item" data-category="digital">
+        <div class="project-card" onclick="openViewer('assets/project-placeholder.png')">
+          <img src="assets/project-placeholder.png" alt="Project">
+          <div class="project-card-body">
+            <h6>Project Title</h6>
+            <p>Digital Assistance & Admin Work</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-sm-6 col-md-4 project-item" data-category="digital">
+        <div class="project-card" onclick="openViewer('assets/project-placeholder.png')">
+          <img src="assets/project-placeholder.png" alt="Project">
+          <div class="project-card-body">
+            <h6>Project Title</h6>
+            <p>Digital Assistance & Admin Work</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-sm-6 col-md-4 project-item" data-category="digital">
+        <div class="project-card" onclick="openViewer('assets/project-placeholder.png')">
+          <img src="assets/project-placeholder.png" alt="Project">
+          <div class="project-card-body">
+            <h6>Project Title</h6>
+            <p>Digital Assistance & Admin Work</p>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- end row -->
+  </div><!-- end project grid col -->
+
+</div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="contact-box text-center">
+    <p class="fst-italic mb-4 mt-2" style="font-size:.8rem; font-weight:600; letter-spacing:2px; text-transform:uppercase; color:#CFA2A5;">Open for opportunities</p>
+    <h4 class="fw-bold mt-2 mb-1">Ready to bring your vision to life?</h4>
+    <p class="text-muted mb-5" style="line-height:1.8;">Let's create something great together!</p>
+    <div class="d-flex flex-column gap-3 align-items-center mb-2">
+      <span><i class="bi bi-envelope-heart me-2" style="color:#CFA2A5; font-size:20px;"></i><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="8ae8ebe6e3f9fee5f3e7ebf8f3e6e5ffe3e4e9efcaede7ebe3e6a4e9e5e7">[email&#160;protected]</a></span>
+      <span><i class="bi bi-phone me-2" style="color:#CFA2A5; font-size:20px;"></i>Available upon request</span>
+      <span><i class="bi bi-geo-alt me-2" style="color:#CFA2A5; font-size:20px;"></i>City of Santo Tomas, Batangas, Philippines</span>
+    </div>
+    <div class="mt-5 mb-5">
+      <a href="https://mail.google.com/mail/?view=cm&to=balistoymarylouince@gmail.com" target="_blank" class="btn-soft fw-semibold">Message Me ✉</a>
+    </div>
+    <div style="font-size:22px;" class="d-flex justify-content-center gap-3 mb-3">
+      <a href="#" class="contact-social mt-3"><i class="bi bi-facebook"></i></a>
+      <a href="#" class="contact-social mt-3"><i class="bi bi-instagram"></i></a>
+      <a href="#" class="contact-social mt-3"><i class="bi bi-linkedin"></i></a>
+      <a href="#" class="contact-social mt-3"><i class="bi bi-github"></i></a>
+      <a href="#" class="contact-social mt-3"><i class="bi bi-google"></i></a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<div class="text-center mt-3 mb-3">
+  <p class="text-muted fw-semibold" style="font-size:.9rem;">© 2026 SoLou. | Mary Louince Balistoy. All Rights Reserved.</p>
+</div>
+
+</div><!-- end dashboard -->
+
+<!-- IMAGE VIEWER -->
+<div id="imageViewer" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,.85); z-index:9999; align-items:center; justify-content:center;" onclick="closeViewer()">
+  <button onclick="closeViewer()" style="position:absolute; top:20px; right:24px; background:rgba(255,255,255,.15); border:none; color:#fff; font-size:28px; cursor:pointer; border-radius:50%; width:44px; height:44px;">✕</button>
+  <img id="viewerImg" src="" style="max-width:90vw; max-height:90vh; border-radius:16px; object-fit:contain;">
+</div>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+
+function filterProjects(category, btn) {
+  // Update active button
+  document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+
+  // Show/hide project items
+  document.querySelectorAll('.project-item').forEach(item => {
+    if (category === 'all' || item.dataset.category === category) {
+      item.style.display = '';
+    } else {
+      item.style.display = 'none';
+    }
+  });
+}
+
+function openViewer(src) {
+  document.getElementById('viewerImg').src = src;
+  document.getElementById('imageViewer').style.display = 'flex';
+  document.body.style.overflow = 'hidden';
+}
+
+function closeViewer() {
+  document.getElementById('imageViewer').style.display = 'none';
+  document.getElementById('viewerImg').src = '';
+  document.body.style.overflow = '';
+}
+
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') closeViewer();
+});
+
+</script>
+</body>
+</html>

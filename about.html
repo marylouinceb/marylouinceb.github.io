@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>SoLou. | About Mary Louince</title>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="icon" type="image/x-icon" href="assets/logo.svg">
+
+<style>
+
+* { box-sizing: border-box; }
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #F5F1ED;
+  min-height: 100vh;
+  padding: 40px 15px;
+  color: #6E5952;
+}
+
+h1,h2,h3,h4,h5,h6     { color: #6E5952; }
+p, span, li            { color: #6E5952; }
+a                      { color: #6E5952; }
+.text-muted            { color: #9F7A76 !important; }
+.fw-bold, .fw-semibold { color: #6E5952; }
+.fst-italic            { color: #9F7A76 !important; }
+small                  { color: #9F7A76; }
+
+/* ─── DASHBOARD ─── */
+.dashboard {
+  max-width: 1200px;
+  margin: auto;
+  padding: 40px;
+  border-radius: 40px;
+  background: #EFE9E3;
+  box-shadow:
+    -20px -20px 40px #F5F1ED,
+      20px  20px 40px rgba(110,89,82,0.55);
+}
+
+/* ─── NAV ─── */
+.nav-soft {
+  background: #EFE9E3;
+  padding: 15px 30px;
+  border-radius: 50px;
+  box-shadow:
+    -8px -8px 18px #F5F1ED,
+     8px  8px 18px rgba(110,89,82,0.55);
+}
+.nav-soft a { color: #6E5952; font-weight: 500; text-decoration: none; }
+.nav-soft a:hover { opacity: .65; }
+
+/* ─── RAISED PANEL ─── */
+.panel-raised {
+  background: #EFE9E3;
+  border-radius: 28px;
+  padding: 32px;
+  box-shadow:
+    -14px -14px 28px #F5F1ED,
+     14px  14px 28px rgba(110,89,82,0.55);
+}
+
+/* ─── SKILL LIST ─── */
+.skill-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.skill-list li {
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(110,89,82,0.08);
+  font-size: .92rem;
+  color: #6E5952;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.skill-list li:last-child { border-bottom: none; }
+.skill-list li::before {
+  content: '';
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #CFA2A5, #9F7A76);
+  flex-shrink: 0;
+}
+
+/* ─── TOOL CARDS ─── */
+.tool-card {
+  background: #EFE9E3;
+  border-radius: 18px;
+  padding: 16px 10px;
+  text-align: center;
+  box-shadow:
+    inset -6px -6px 12px #F5F1ED,
+    inset  6px  6px 12px rgba(110,89,82,0.45);
+  transition: .4s ease;
+}
+.tool-card:hover {
+  box-shadow:
+    -8px -8px 16px #F5F1ED,
+     8px  8px 16px rgba(110,89,82,0.55);
+  transform: translateY(-3px);
+}
+.tool-card img {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto 8px;
+  filter: grayscale(30%) sepia(20%) brightness(.9);
+  transition: filter .3s ease;
+  border-radius: 0;
+  cursor: default;
+}
+.tool-card:hover img { filter: none; }
+.tool-card p { color: #9F7A76; margin: 0; font-size: .75rem; }
+
+/* ─── PERSONAL INFO ─── */
+.info-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(110,89,82,0.08);
+}
+.info-item:last-child { border-bottom: none; }
+.info-item i { color: #CFA2A5; font-size: 18px; margin-top: 2px; flex-shrink: 0; }
+.info-label {
+  font-size: .72rem;
+  font-weight: 600;
+  color: #9F7A76;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 2px;
+}
+.info-value { font-size: .88rem; color: #6E5952; margin: 0; }
+
+/* ─── CERT IMAGES ─── */
+.cert-img {
+  border-radius: 18px;
+  cursor: pointer;
+  transition: .4s ease;
+  box-shadow: -8px -8px 16px #F5F1ED, 8px 8px 16px rgba(110,89,82,0.55);
+}
+.cert-img:hover {
+  transform: scale(1.03);
+  box-shadow: -12px -12px 24px #F5F1ED, 12px 12px 24px rgba(110,89,82,0.55);
+}
+
+/* ─── BUTTONS ─── */
+.btn-soft {
+  background: #EFE9E3;
+  border: none;
+  padding: 10px 24px;
+  border-radius: 50px;
+  box-shadow: -6px -6px 12px #F5F1ED, 6px 6px 12px rgba(110,89,82,0.55);
+  transition: .3s ease;
+  text-decoration: none;
+  color: #6E5952;
+  display: inline-block;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+  font-size: inherit;
+  font-weight: 500;
+}
+.btn-soft:hover {
+  box-shadow: inset -5px -5px 10px #F5F1ED, inset 5px 5px 10px rgba(110,89,82,0.55);
+  transform: translateY(1px);
+  color: #6E5952;
+}
+
+/* ─── CONTACT BOX ─── */
+.contact-box {
+  background: #EFE9E3;
+  border-radius: 28px;
+  padding: 35px;
+  box-shadow:
+    inset -10px -10px 22px #F5F1ED,
+    inset  10px  10px 22px rgba(110,89,82,0.55);
+}
+
+/* ─── SOCIAL ─── */
+.contact-social {
+  color: #6E5952;
+  text-decoration: none;
+  transition: .3s;
+  width: 44px; height: 44px;
+  display: inline-flex; align-items: center; justify-content: center;
+  border-radius: 50%;
+  background: #EFE9E3;
+  box-shadow: -5px -5px 10px #F5F1ED, 5px 5px 10px rgba(110,89,82,0.45);
+}
+.contact-social:hover {
+  color: #CFA2A5;
+  box-shadow: inset -4px -4px 8px #F5F1ED, inset 4px 4px 8px rgba(110,89,82,0.45);
+}
+
+/* ─── MISC ─── */
+.logo { text-decoration: none; }
+.logo-img { height: 30px; width: auto; object-fit: contain; }
+.accent-label {
+  font-size: .78rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  color: #CFA2A5;
+  text-transform: uppercase;
+  display: block;
+}
+.panel-divider {
+  border: none;
+  border-top: 1px solid rgba(110,89,82,0.1);
+  margin: 24px 0;
+}
+section { margin-bottom: 40px; }
+
+.btn.btn-dark {
+  background: #CFA2A5 !important;
+  border-color: #CFA2A5 !important;
+  color: #fff !important;
+  border-radius: 50px;
+  font-weight: 600;
+  box-shadow: -4px -4px 8px #F5F1ED, 4px 4px 8px rgba(110,89,82,0.55);
+}
+.btn.btn-dark:hover { background: #6E5952 !important; color: #fff !important; }
+
+/* ─── RESPONSIVE ─── */
+@media (max-width: 767.98px) {
+  body { padding: 20px 10px; }
+  .dashboard { padding: 24px 16px; border-radius: 28px; }
+  .panel-raised { padding: 22px 18px; }
+  section { margin-bottom: 30px; }
+}
+@media (max-width: 575.98px) {
+  .dashboard { padding: 18px 12px; border-radius: 22px; }
+}
+
+</style>
+</head>
+
+<body>
+<div class="dashboard">
+
+<!-- NAV -->
+<nav class="nav-soft mb-5">
+  <div class="d-flex justify-content-between align-items-center">
+    <div class="logo">
+      <a href="index.html">
+        <img src="assets/logo.svg" alt="Logo" class="logo-img">
+      </a>
+    </div>
+    <button class="btn-soft d-lg-none py-2 px-3 lh-1" type="button"
+            data-bs-toggle="collapse" data-bs-target="#navLinks" aria-expanded="false" aria-label="Toggle navigation">
+      <i class="bi bi-list fs-5"></i>
+    </button>
+    <div class="d-none d-lg-flex align-items-center gap-4">
+      <a class="fw-semibold" href="index.html">Home</a>
+      <a class="fw-semibold" href="index.html#work">Services</a>
+      <a class="fw-semibold" href="works.html">Projects</a>
+      <a class="btn btn-dark rounded-5 fw-semibold" style="color:#fff;" href="#contact">Contact</a>
+    </div>
+  </div>
+  <div class="collapse d-lg-none" id="navLinks">
+    <div class="d-flex flex-column gap-3 mt-3 pb-1 ps-1">
+      <a class="fw-semibold" href="index.html">Home</a>
+      <a class="fw-semibold" href="index.html#work">Services</a>
+      <a class="fw-semibold" href="works.html">Projects</a>
+      <div>
+        <a class="btn btn-dark rounded-5 fw-semibold" style="color:#fff;" href="#contact">Contact</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- ═══════════════════════════════════════
+     MAIN TWO-COLUMN SECTION
+════════════════════════════════════════ -->
+<section>
+<div class="row g-4 align-items-start">
+
+  <!-- LEFT COLUMN — About Me + Skills -->
+  <div class="col-12 col-lg-7">
+
+    <!-- About Me -->
+    <div class="px-1 mb-4">
+      <span class="accent-label mb-2">About Me</span>
+      <h3 class="fw-bold mt-2 mb-1">Hi, I'm Mary Louince!</h3>
+      <h6 class="fw-semibold mb-4" style="color:#CFA2A5;">Visual Designer &amp; Creative Assistant</h6>
+      <p class="text-muted" style="line-height:1.9; font-size:.95rem;">
+        Building a brand that truly reflects you takes more than beautiful visuals — it takes intention, consistency, and a quiet confidence in every detail.
+      </p>
+      <p class="text-muted" style="line-height:1.9; font-size:.95rem;">
+        I'm a designer and creative assistant with a soft spot for brands that mean something. I work with women entrepreneurs, small business owners, and creatives to craft refined visual identities, thoughtful digital experiences, and the kind of reliable support that lets you breathe a little easier. My work is guided by three things: clarity, elegance, and purpose.
+      </p>
+      <p class="text-muted" style="line-height:1.9; font-size:.95rem;">
+        Because the brands that last aren't the loudest — they're the most intentional.
+      </p>
+      <div class="d-flex flex-wrap gap-3 mt-4">
+        <a href="assets/Mary Louince Balistoy CV.pdf" target="_blank" class="btn-soft btn-sm fw-semibold">
+          CV <i class="bi bi-box-arrow-up-right" style="font-size:.75rem;"></i>
+        </a>
+        <a href="#contact" class="btn-soft btn-sm fw-semibold">Hire Me</a>
+      </div>
+    </div>
+
+    <!-- Skills -->
+    <div class="px-1">
+      <span class="accent-label mb-3">Skills</span>
+      <ul class="skill-list mt-3">
+        <li>Brand &amp; Visual Design</li>
+        <li>UI/UX Design</li>
+        <li>Social Media &amp; Content Design</li>
+        <li>Frontend Design (HTML &amp; CSS)</li>
+        <li>Digital Assistance</li>
+        <li>Content Planning &amp; Copywriting</li>
+      </ul>
+    </div>
+
+  </div><!-- end left column -->
+
+  <!-- RIGHT COLUMN — picture + personal info (sticky on desktop) -->
+  <div class="col-12 col-lg-5" style="position: sticky; top: 24px;">
+    <div class="panel-raised text-center">
+
+      <!-- Picture -->
+      <img src="assets/idpic.png" style="width:190px; max-width:100%;" class="rounded-circle mb-3">
+      <h5 class="fw-bold mb-1">Mary Louince Balistoy</h5>
+      <p class="small text-muted fw-semibold mb-0">Visual Designer</p>
+      <p class="small text-muted fw-semibold mb-2">Creative Assistant</p>
+      <span class="accent-label mt-2">Open for Opportunities</span>
+
+      <hr class="panel-divider">
+
+      <!-- Personal Info -->
+      <div class="text-start">
+        <span class="accent-label mb-3">Personal Info</span>
+        <div class="info-item mt-3">
+          <i class="bi bi-geo-alt"></i>
+          <div>
+            <p class="info-label">Location</p>
+            <p class="info-value">City of Santo Tomas, Batangas, Philippines</p>
+          </div>
+        </div>
+        <div class="info-item">
+          <i class="bi bi-envelope-heart"></i>
+          <div>
+            <p class="info-label">Email</p>
+            <p class="info-value"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="3e5c5f52574d4a5147535f4c4752514b57505d5b7e59535f5752105d5153">[email&#160;protected]</a></p>
+          </div>
+        </div>
+        <div class="info-item">
+          <i class="bi bi-phone"></i>
+          <div>
+            <p class="info-label">Phone</p>
+            <p class="info-value">Available upon request</p>
+          </div>
+        </div>
+        <div class="info-item">
+          <i class="bi bi-translate"></i>
+          <div>
+            <p class="info-label">Languages</p>
+            <p class="info-value">Filipino, English</p>
+          </div>
+        </div>
+        <div class="info-item">
+          <i class="bi bi-mortarboard"></i>
+          <div>
+            <p class="info-label">Education</p>
+            <p class="info-value">BS Information Technology</p>
+          </div>
+        </div>
+        <div class="info-item">
+          <i class="bi bi-clock"></i>
+          <div>
+            <p class="info-label">Availability</p>
+            <p class="info-value">Freelance &amp; Remote</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div><!-- end right column -->
+
+</div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     TOOLS — FULL WIDTH
+════════════════════════════════════════ -->
+<section>
+  <span class="accent-label mb-3">Tools</span>
+  <div class="row g-3 mt-1">
+
+    <div class="col-4 col-sm-3 col-md-2">
+      <div class="tool-card">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg" alt="Figma">
+        <p>Figma</p>
+      </div>
+    </div>
+
+    <div class="col-4 col-sm-3 col-md-2">
+      <div class="tool-card">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/canva/canva-original.svg" alt="Canva">
+        <p>Canva</p>
+      </div>
+    </div>
+
+    <div class="col-4 col-sm-3 col-md-2">
+      <div class="tool-card">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" alt="HTML5">
+        <p>HTML</p>
+      </div>
+    </div>
+
+    <div class="col-4 col-sm-3 col-md-2">
+      <div class="tool-card">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" alt="CSS3">
+        <p>CSS</p>
+      </div>
+    </div>
+
+    <div class="col-4 col-sm-3 col-md-2">
+      <div class="tool-card">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" alt="JavaScript">
+        <p>JavaScript</p>
+      </div>
+    </div>
+
+    <div class="col-4 col-sm-3 col-md-2">
+      <div class="tool-card">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg" alt="MySQL">
+        <p>SQL</p>
+      </div>
+    </div>
+
+    <div class="col-4 col-sm-3 col-md-2">
+      <div class="tool-card">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" alt="GitHub">
+        <p>GitHub</p>
+      </div>
+    </div>
+
+    <div class="col-4 col-sm-3 col-md-2">
+      <div class="tool-card">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/notion/notion-original.svg" alt="Notion">
+        <p>Notion</p>
+      </div>
+    </div>
+
+    <div class="col-4 col-sm-3 col-md-2">
+      <div class="tool-card">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/google/google-original.svg" alt="Google Workspace">
+        <p>G-Suite</p>
+      </div>
+    </div>
+
+    <!-- Zoom -->
+    <div class="col-4 col-sm-3 col-md-2">
+      <div class="tool-card">
+        <img src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/zoom-meetings-icon.png" alt="Zoom">
+        <p>Zoom</p>
+      </div>
+    </div>
+
+    <!-- ChatGPT -->
+    <div class="col-4 col-sm-3 col-md-2">
+      <div class="tool-card">
+        <img src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/chatgpt-icon.png" alt="ChatGPT">
+        <p>ChatGPT</p>
+      </div>
+    </div>
+
+    <!-- Freepik — no public CDN logo available; replace src with your own file -->
+    <div class="col-4 col-sm-3 col-md-2">
+      <div class="tool-card">
+        <img src="assets/fplogo.png" alt="Freepik">
+        <p>Freepik</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     CERTIFICATES & AWARDS
+════════════════════════════════════════ -->
+<section id="certificates">
+<div class="panel-raised">
+  <span class="accent-label mb-2">Recognition</span>
+  <h4 class="fw-bold mt-2 mb-5">Certificates &amp; Awards</h4>
+  <div class="row g-4">
+    <div class="col-12 col-md-4">
+      <img src="assets/DataScienceCert.png" class="img-fluid cert-img" onclick="openViewer(this.src)">
+    </div>
+    <div class="col-12 col-md-4">
+      <img src="assets/NetBasicsCert.png" class="img-fluid cert-img" onclick="openViewer(this.src)">
+    </div>
+    <div class="col-12 col-md-4">
+      <img src="assets/TechNexus.png" class="img-fluid cert-img" onclick="openViewer(this.src)">
+    </div>
+  </div>
+</div>
+</section>
+
+<!--CONTACT-->
+<section id="contact">
+<div class="text-center">
+  <p class="fst-italic mb-4 mt-2" style="font-size:.8rem; font-weight:600; letter-spacing:2px; text-transform:uppercase; color:#CFA2A5;">Open for opportunities</p>
+  <h4 class="fw-bold mt-2 mb-1">Ready to bring your vision to life?</h4>
+  <p class="text-muted mb-5" style="line-height:1.8;">Let's create something great together!</p>
+  <div class="d-flex flex-column gap-3 align-items-center mb-2">
+    <span><i class="bi bi-envelope-heart me-2" style="color:#CFA2A5; font-size:20px;"></i><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="93f1f2fffae0e7fceafef2e1eafffce6fafdf0f6d3f4fef2faffbdf0fcfe">[email&#160;protected]</a></span>
+    <span><i class="bi bi-phone me-2" style="color:#CFA2A5; font-size:20px;"></i>Available upon request</span>
+    <span><i class="bi bi-geo-alt me-2" style="color:#CFA2A5; font-size:20px;"></i>City of Santo Tomas, Batangas, Philippines</span>
+  </div>
+  <div class="mt-5 mb-5">
+    <a href="https://mail.google.com/mail/?view=cm&to=balistoymarylouince@gmail.com" target="_blank" class="btn-soft fw-semibold">Message Me ✉</a>
+  </div>
+  <div style="font-size:22px;" class="d-flex justify-content-center gap-3 mb-3">
+    <a href="#" class="contact-social mt-3"><i class="bi bi-facebook"></i></a>
+    <a href="#" class="contact-social mt-3"><i class="bi bi-instagram"></i></a>
+    <a href="#" class="contact-social mt-3"><i class="bi bi-linkedin"></i></a>
+    <a href="#" class="contact-social mt-3"><i class="bi bi-github"></i></a>
+    <a href="#" class="contact-social mt-3"><i class="bi bi-google"></i></a>
+  </div>
+</div>
+</section>
+
+<!-- FOOTER -->
+<div class="text-center mt-3 mb-3">
+  <p class="text-muted fw-semibold" style="font-size:.9rem;">© 2026 SoLou. | Mary Louince Balistoy. All Rights Reserved.</p>
+</div>
+
+</div><!-- end dashboard -->
+
+<!-- IMAGE VIEWER -->
+<div id="imageViewer" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.85);z-index:9999;align-items:center;justify-content:center;" onclick="closeViewer()">
+  <button onclick="closeViewer()" style="position:absolute;top:20px;right:24px;background:rgba(255,255,255,.15);border:none;color:#fff;font-size:28px;cursor:pointer;border-radius:50%;width:44px;height:44px;">✕</button>
+  <img id="viewerImg" src="" style="max-width:90vw;max-height:90vh;border-radius:16px;object-fit:contain;">
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+function openViewer(src){
+  document.getElementById('viewerImg').src = src;
+  document.getElementById('imageViewer').style.display = 'flex';
+}
+function closeViewer(){
+  document.getElementById('imageViewer').style.display = 'none';
+}
+</script>
+</body>
+</html>
