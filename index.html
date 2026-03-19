@@ -11,29 +11,11 @@
 <link rel="icon" type="image/x-icon" href="assets/logo.svg">
 <style>
 
-/*
-  RUSTIC ROMANCE — CORRECTED NEUMORPHIC SYSTEM
-  ─────────────────────────────────────────────
-  Surface (all elements):  #EFE9E3  Linen
-  Body floor:              #b8afa8  Dark linen  ← MUST be darker than surface
-  Light shadow:            #F5F1ED  Barely lighter than surface
-  Dark shadow:             rgba(110,89,82,0.55)  — warm mocha depth
-  Text primary:            #6E5952  Mocha Brown
-  Text muted:              #9F7A76  Warm Clay
-  Accent:                  #CFA2A5  Rosewood
-
-  DEPTH RULES:
-  • Raised  → shadows outward  (-X -Y light, +X +Y dark)
-  • Inset   → shadows inward   (inset -X -Y light, inset +X +Y dark)
-  • Bigger offsets = more depth — scale by element size
-  ─────────────────────────────────────────────
-*/
-
 * { box-sizing: border-box; }
 
 body {
   font-family: 'Poppins', sans-serif;
-  background: #F5F1ED; /* ← dark floor — dashboard visibly lifts off this */
+  background: #F5F1ED;
   min-height: 100vh;
   padding: 40px 15px;
   color: #6E5952;
@@ -412,11 +394,11 @@ I give creative support, made reliable.
 
 
 <div class="d-flex flex-wrap gap-4 mt-5 content-center justify-content-center mb-1">
-<button class="btn-soft btn-sm fw-semibold" onclick="window.open('about.html', '_blank')">About Me <i class="bi bi-box-arrow-up-right" style="font-size:.8rem;"></i></button>
+<button class="btn-soft btn-sm fw-semibold" onclick="window.open('about.html', '_blank')">About Me</button>
 <button class="btn-soft btn-sm fw-semibold" onclick="window.open('assets/Mary Louince Balistoy CV.pdf', '_blank')">CV</button>
 <button class="btn-soft btn-sm fw-semibold" onclick="showAbout('certs')">Certificates</button>
-<button class="btn-soft btn-sm fw-semibold" onclick="showAbout('skills')">Tools & Skills</button>
-<!-- <button class="btn-soft btn-sm" onclick="showAbout('pricing')">Pricing</button> -->
+<!-- <button class="btn-soft btn-sm fw-semibold" onclick="showAbout('skills')">Tools & Skills</button>
+<button class="btn-soft btn-sm" onclick="showAbout('pricing')">Pricing</button> -->
 </div>
 
 <div class="mt-4">
@@ -433,7 +415,7 @@ I give creative support, made reliable.
 </div>
 </div>
 
-<div id="skills" class="d-none row g-4 text-center mt-2">
+<!-- <div id="skills" class="d-none row g-4 text-center mt-2">
 
 <div class="col-6 col-md-3"><div class="soft-card"><i class="bi bi-filetype-html skill"></i><p>HTML</p></div></div>
 <div class="col-6 col-md-3"><div class="soft-card"><i class="bi bi-filetype-css skill"></i><p>CSS</p></div></div>
@@ -445,10 +427,10 @@ I give creative support, made reliable.
 <div class="col-6 col-md-3"><div class="soft-card"><i class="bi bi-journal skill"></i><p>Notion</p></div></div>
 <div class="col-6 col-md-3"><div class="soft-card"><i class="bi bi-google skill"></i><p>Google Workspace</p></div></div>
 
-</div>
+</div> -->
 
 </div>
-</div><!-- end about-section -->
+</div>
 </section>
 
 <section id="work">
@@ -541,17 +523,17 @@ I give creative support, made reliable.
 <div class="row g-4 mb-5 mt-5">
 
 <div class="col-12 col-md-4">
-<img src="assets/tbeveryday.png" class="img-fluid work-img"
+<img src="assets/1.png" class="img-fluid work-img"
 onclick="openViewer(this.src)">
 </div>
 
 <div class="col-12 col-md-4">
-<img src="assets/tbig.png" class="img-fluid work-img"
+<img src="assets/tfb.png" class="img-fluid work-img"
 onclick="openViewer(this.src)">
 </div>
 
 <div class="col-12 col-md-4">
-<img src="assets/tbdo.png" class="img-fluid work-img"
+<img src="assets/2.png" class="img-fluid work-img"
 onclick="openViewer(this.src)">
 </div>
 
@@ -592,11 +574,10 @@ onclick="openViewer(this.src)">
   </div>
 
   <div style="font-size:22px;" class="d-flex justify-content-center gap-3 mb-3">
-    <a href="#" class="contact-social  mt-3"><i class="bi bi-facebook"></i></a>
+    <a href="https://www.facebook.com/mary.louince.77/" class="contact-social  mt-3"><i class="bi bi-facebook"></i></a>
     <a href="#" class="contact-social  mt-3"><i class="bi bi-instagram"></i></a>
-    <a href="#" class="contact-social  mt-3"><i class="bi bi-linkedin"></i></a>
-    <a href="#" class="contact-social  mt-3"><i class="bi bi-github"></i></a>
-    <a href="#" class="contact-social  mt-3"><i class="bi bi-google"></i></a>
+    <a href="www.linkedin.com/in/mary-louince-balistoy-b39b55378" class="contact-social  mt-3"><i class="bi bi-linkedin"></i></a>
+    <a href="https://github.com/marylouinceb" class="contact-social  mt-3"><i class="bi bi-github"></i></a>
   </div>
 
 </div>
@@ -612,7 +593,7 @@ onclick="openViewer(this.src)">
 function showAbout(id){
   var target = document.getElementById(id);
   var isVisible = !target.classList.contains('d-none');
-  ['default','certs','skills'].forEach(x=>{
+  ['default','certs'].forEach(x=>{
     document.getElementById(x).classList.add('d-none');
   });
   if(isVisible){
