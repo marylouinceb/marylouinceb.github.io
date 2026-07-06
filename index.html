@@ -72,6 +72,12 @@ small                  { color: #9F7A76; }
   text-decoration: none;
 }
 
+.btn-col:hover {
+  color: #bda28b ;
+  text-decoration: none;
+}
+
+
 /* ─────────────────────────────────────────
    PROFILE PANEL — inset well
    Inset (10px) = clearly pressed into dashboard
@@ -193,22 +199,48 @@ small                  { color: #9F7A76; }
   filter: drop-shadow(0 4px 14px rgba(207,162,165,0.5));
 }
 
+.about-text {
+    text-align: justify;
+}
+
 /* ─────────────────────────────────────────
    PORTFOLIO IMAGES — raised frames
 ───────────────────────────────────────── */
 .work-img {
   cursor: pointer;
   transition: .4s ease;
-  border-radius: 22px;
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 1587 / 2245;
+  object-fit: cover;
+  display: block;
+}
+.cert-img {
+  cursor: pointer;
+  transition: .4s ease;
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  display: block;
+}
+.work-img:hover,
+.cert-img:hover {
+  transform: scale(1.03);
+}
+
+.cert-card,
+.featured-card {
+  background: #EFE9E3;
+  border-radius: 24px;
+  overflow: hidden;
   box-shadow:
     -8px -8px 16px #F5F1ED,
      8px  8px 16px rgba(110,89,82,0.55);
-}
-.work-img:hover {
-  transform: scale(1.04);
-  box-shadow:
-    -14px -14px 28px #F5F1ED,
-     14px  14px 28px rgba(110,89,82,0.55);
+  min-height: 240px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* ─────────────────────────────────────────
@@ -273,7 +305,7 @@ input:focus, textarea:focus {
   box-shadow: -5px -5px 10px #F5F1ED, 5px 5px 10px rgba(110,89,82,0.45);
 }
 .contact-social:hover {
-  color: #CFA2A5;
+  color: #6E5952;
   box-shadow: inset -4px -4px 8px #F5F1ED, inset 4px 4px 8px rgba(110,89,82,0.45);
 }
 .skill    { font-size: 34px; margin-bottom: 8px; }
@@ -319,20 +351,20 @@ section   { margin-bottom: 70px; }
     </button>
     <!-- Desktop links -->
     <div class="d-none d-lg-flex align-items-center gap-4">
-      <a class="fw-semibold" href="#home">Home</a>
-      <a class="fw-semibold" href="#about">About</a>
-      <a class="fw-semibold" href="#work">Services</a>
-      <a class="fw-semibold" href="#portfolio">Projects</a>
+      <a class="btn-col fw-semibold" href="#home">Home</a>
+      <a class="btn-col fw-semibold" href="#about">About</a>
+      <a class="btn-col fw-semibold" href="#work">Services</a>
+      <a class="btn-col fw-semibold" href="#portfolio">Projects</a>
       <a class="btn btn-dark rounded-5 fw-semibold" style="color:#fff;" href="#contact">Contact</a>
     </div>
   </div>
   <!-- Mobile collapse links -->
   <div class="collapse d-lg-none" id="navLinks">
     <div class="d-flex flex-column gap-3 mt-3 pb-1 ps-1">
-      <a class="fw-semibold" href="#home">Home</a>
-      <a class="fw-semibold" href="#about">About</a>
-      <a class="fw-semibold" href="#work">Services</a>
-      <a class="fw-semibold" href="#portfolio">Projects</a>
+      <a class="btn-col fw-semibold" href="#home">Home</a>
+      <a class="btn-col fw-semibold" href="#about">About</a>
+      <a class="btn-col fw-semibold" href="#work">Services</a>
+      <a class="btn-col fw-semibold" href="#portfolio">Projects</a>
       <div>
         <a class="btn btn-dark rounded-5 fw-semibold" style="color:#fff;" href="#contact">Contact</a>
       </div>
@@ -374,25 +406,16 @@ section   { margin-bottom: 70px; }
 <!-- ABOUT -->
 <section id="about">
 <div class="about-section">
+  
 <h5 class="fw-bold mb-3 mt-3 ps-3" style="color:#6E5952;">Hi, I’m Mary Louince!</h5>
-<p class="text-muted ps-4 pe-3" style="color:#9F7A76;">
-Building something meaningful requires more than great visuals—
-it takes effective organization, creative content, and purposeful design working together.
+<p class="text-muted ps-4 pe-4 about-text" style="color:#9F7A76;">
+Every great project begins with an idea—and I've always believed that ideas deserve to be brought to life with purpose. A creative virtual assistant with a passion for transforming concepts into thoughtful designs, seamless digital experiences, and meaningful solutions.</p>
+<p class="text-muted ps-4 pe-3 about-text" style="color:#9F7A76;">
+I enjoy balancing creativity with logic, combining an eye for design with a problem-solving mindset to help businesses build a strong and intentional presence. Whether I'm crafting a visual identity, designing a website, creating engaging content, or supporting the creative process behind the scenes, I approach every project with care, curiosity, and attention to detail.
 </p>
-<p class="text-muted ps-4 pe-3" style="color:#9F7A76;">
-As a Creative Virtual Assistant specializing in Branding and Design, I support small businesses 
-and solopreneurs with both organization and creativity—handling day-to-day tasks while creating 
-visuals that keep your brand consistent and recognizable. I help manage workflows, organize 
-systems, and design brand materials that feel aligned with your vision.
+<p class="text-muted ps-4 pe-3 about-text" style="color:#9F7A76;">
+For me, the most rewarding part of this work is seeing an idea grow into something real. My goal is to become a trusted creative partner who helps brands not only look their best but confidently share their story with the world.
 </p>
-<p class="text-muted ps-4 pe-3" style="color:#9F7A76;">
-I value clarity, consistency, and purposeful execution, and my goal isn't to overcomplicate 
-your business—it's to simplify it, support it, and strengthen it.
-</p>
-<p class="text-muted ps-4 pe-3" style="color:#9F7A76;">
-I give creative support, made reliable. 
-</p>
-
 
 <div class="d-flex flex-wrap gap-4 mt-5 content-center justify-content-center mb-1">
 <button class="btn-soft btn-sm fw-semibold" onclick="window.open('about.html', '_blank')">About Me</button>
@@ -406,14 +429,27 @@ I give creative support, made reliable.
 
 <div id="default" class="text-center mt-5 mb-1">Select a section above.</div>
 
-<div id="certs" class="d-none row g-3 mt-2">
-<div class="col-12 col-md-4"><img src="assets/DataScienceCert.png" class="img-fluid" onclick="openViewer(this.src)" style="cursor:pointer;"></div>
-<div class="col-12 col-md-4"><img src="assets/NetBasicsCert.png" class="img-fluid" onclick="openViewer(this.src)" style="cursor:pointer;"></div>
-<div class="col-12 col-md-4"><img src="assets/TechNexus.png" class="img-fluid" onclick="openViewer(this.src)" style="cursor:pointer;"></div>
-
-<div class="col-12 text-center mt-5 mb-4">
-<a href="about.html#certificates" class="btn-soft btn-sm fw-semibold" style="color:#6E5952;">View All Awards</a>
-</div>
+<div id="certs" class="d-none mt-2">
+  <div class="row g-3">
+    <div class="col-12 col-md-4">
+      <div class="cert-card">
+        <img src="assets/DataScienceCert.png" class="img-fluid cert-img" onclick="openViewer(this.src)" style="cursor:pointer;">
+      </div>
+    </div>
+    <div class="col-12 col-md-4">
+      <div class="cert-card">
+        <img src="assets/NetBasicsCert.png" class="img-fluid cert-img" onclick="openViewer(this.src)" style="cursor:pointer;">
+      </div>
+    </div>
+    <div class="col-12 col-md-4">
+      <div class="cert-card">
+        <img src="assets/TechNexus.png" class="img-fluid cert-img" onclick="openViewer(this.src)" style="cursor:pointer;">
+      </div>
+    </div>
+  </div>
+  <div class="col-12 text-center mt-5 mb-4">
+    <a href="about.html#certificates" class="btn-soft btn-sm fw-semibold" style="color:#6E5952;">View All Awards</a>
+  </div>
 </div>
 
 <!-- <div id="skills" class="d-none row g-4 text-center mt-2">
@@ -522,20 +558,23 @@ is shaped around your brand so the experience feels as intentional as the design
 
 <div class="row g-4 mb-5 mt-5">
 
-<div class="col-12 col-md-4">
-<img src="assets/1.png" class="img-fluid work-img"
-onclick="openViewer(this.src)">
-</div>
+  <div class="col-12 col-md-4">
+    <div class="featured-card">
+      <img src="assets/tb.png" class="img-fluid work-img" onclick="openViewer(this.src)">
+    </div>
+  </div>
 
-<div class="col-12 col-md-4">
-<img src="assets/tfb.png" class="img-fluid work-img"
-onclick="openViewer(this.src)">
-</div>
+  <div class="col-12 col-md-4">
+    <div class="featured-card">
+      <img src="assets/tfb.png" class="img-fluid work-img" onclick="openViewer(this.src)">
+    </div>
+  </div>
 
-<div class="col-12 col-md-4">
-<img src="assets/2.png" class="img-fluid work-img"
-onclick="openViewer(this.src)">
-</div>
+  <div class="col-12 col-md-4">
+    <div class="featured-card">
+      <img src="assets/pchs.png" class="img-fluid work-img" onclick="openViewer(this.src)">
+    </div>
+  </div>
 
 </div>
 

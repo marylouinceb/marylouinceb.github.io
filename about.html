@@ -57,6 +57,11 @@ small                  { color: #9F7A76; }
   text-decoration: none; 
 }
 
+.btn-col:hover {
+  color: #bda28b ;
+  text-decoration: none;
+}
+
 /* ─── RAISED PANEL ─── */
 .panel-raised {
   background: #EFE9E3;
@@ -98,6 +103,10 @@ small                  { color: #9F7A76; }
   background: #EFE9E3;
   border-radius: 18px;
   padding: 16px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   text-align: center;
   box-shadow:
     inset -6px -6px 12px #F5F1ED,
@@ -117,12 +126,16 @@ small                  { color: #9F7A76; }
   display: block;
   margin: 0 auto 8px;
   filter: grayscale(30%) sepia(20%) brightness(.9);
-  transition: filter .3s ease;
-  border-radius: 0;
+  transition: filter .3s ease, transform .3s ease;
   cursor: default;
 }
-.tool-card:hover img { filter: none; }
-.tool-card p { color: #9F7A76; margin: 0; font-size: .75rem; }
+.tool-card:hover img { filter: none; transform: scale(1.05); }
+.tool-card p {
+  color: #9F7A76;
+  margin: 0;
+  font-size: .75rem;
+  line-height: 1.4;
+}
 
 /* ─── PERSONAL INFO ─── */
 .info-item {
@@ -145,15 +158,26 @@ small                  { color: #9F7A76; }
 .info-value { font-size: .88rem; color: #6E5952; margin: 0; }
 
 /* ─── CERT IMAGES ─── */
-.cert-img {
+.cert-card {
+  background: #ffff;
   border-radius: 18px;
+  overflow: hidden;
+  box-shadow: -8px -8px 16px #F5F1ED, 8px 8px 16px rgba(110,89,82,0.55);
+  min-height: 260px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.cert-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0;
   cursor: pointer;
   transition: .4s ease;
-  box-shadow: -8px -8px 16px #F5F1ED, 8px 8px 16px rgba(110,89,82,0.55);
 }
 .cert-img:hover {
   transform: scale(1.03);
-  box-shadow: -12px -12px 24px #F5F1ED, 12px 12px 24px rgba(110,89,82,0.55);
 }
 
 /* ─── BUTTONS ─── */
@@ -200,7 +224,7 @@ small                  { color: #9F7A76; }
   box-shadow: -5px -5px 10px #F5F1ED, 5px 5px 10px rgba(110,89,82,0.45);
 }
 .contact-social:hover {
-  color: #CFA2A5;
+  color: #6E5952;
   box-shadow: inset -4px -4px 8px #F5F1ED, inset 4px 4px 8px rgba(110,89,82,0.45);
 }
 
@@ -264,17 +288,17 @@ section { margin-bottom: 40px; }
       <i class="bi bi-list fs-5"></i>
     </button>
     <div class="d-none d-lg-flex align-items-center gap-4">
-      <a class="fw-semibold" href="index.html">Home</a>
-      <a class="fw-semibold" href="index.html#work">Services</a>
-      <a class="fw-semibold" href="works.html">Projects</a>
+      <a class="btn-col fw-semibold" href="index.html">Home</a>
+      <a class="btn-col fw-semibold" href="index.html#work">Services</a>
+      <a class="btn-col fw-semibold" href="works.html">Projects</a>
       <a class="btn btn-dark rounded-5 fw-semibold" style="color:#fff;" href="#contact">Contact</a>
     </div>
   </div>
   <div class="collapse d-lg-none" id="navLinks">
     <div class="d-flex flex-column gap-3 mt-3 pb-1 ps-1">
-      <a class="fw-semibold" href="index.html">Home</a>
-      <a class="fw-semibold" href="index.html#work">Services</a>
-      <a class="fw-semibold" href="works.html">Projects</a>
+      <a class="btn-col fw-semibold" href="index.html">Home</a>
+      <a class="btn-col fw-semibold" href="index.html#work">Services</a>
+      <a class="btn-col fw-semibold" href="works.html">Projects</a>
       <div>
         <a class="btn btn-dark rounded-5 fw-semibold" style="color:#fff;" href="#contact">Contact</a>
       </div>
@@ -295,15 +319,15 @@ section { margin-bottom: 40px; }
     <div class="px-1 mb-4">
       <span class="accent-label mb-2">About Me</span>
       <h3 class="fw-bold mt-2 mb-1">Hi, I'm Mary Louince!</h3>
-      <h6 class="fw-semibold mb-4" style="color:#CFA2A5;">Visual Designer &amp; Creative Assistant</h6>
+      <h6 class="fw-semibold mb-4" style="color:#CFA2A5;">Creative Virtual Assistant &amp; Brand and Design Support</h6>
       <p class="text-muted" style="line-height:1.9; font-size:.95rem;">
-        Building a brand that truly reflects you takes more than beautiful visuals — it takes intention, consistency, and a quiet confidence in every detail.
+        I'm an Information Technology student and a creative virtual assistant who enjoys blending creativity with technology to bring ideas to life. I started freelancing because I wanted to build a career doing work I genuinely enjoy. Today, I help women-owned businesses, startups, and growing brands through thoughtful design, creative content, web development, and reliable virtual assistance. I believe the best work isn't just visually appealing—it's purposeful, functional, and built with intention.
       </p>
       <p class="text-muted" style="line-height:1.9; font-size:.95rem;">
-        I'm a designer and creative assistant with a soft spot for brands that mean something. I work with women entrepreneurs, small business owners, and creatives to craft refined visual identities, thoughtful digital experiences, and the kind of reliable support that lets you breathe a little easier. My work is guided by three things: clarity, elegance, and purpose.
+        I'm naturally calm, organized, and detail-oriented, but what truly drives me is my imagination. Once I envision an idea, I enjoy turning it into something real. That balance between creativity and logic shapes every project I take on.
       </p>
       <p class="text-muted" style="line-height:1.9; font-size:.95rem;">
-        Because the brands that last aren't the loudest — they're the most intentional.
+        My goal is simple: to become a trusted creative partner for clients around the world, creating meaningful work that helps their ideas—and mine—grow into something lasting.
       </p>
       <div class="d-flex flex-wrap gap-3 mt-4">
         <a href="assets/Mary Louince Balistoy CV.pdf" target="_blank" class="btn-soft btn-sm fw-semibold">
@@ -317,12 +341,11 @@ section { margin-bottom: 40px; }
     <div class="px-1">
       <span class="accent-label mb-3">Skills</span>
       <ul class="skill-list mt-3">
-        <li>Brand &amp; Visual Design</li>
-        <li>UI/UX Design</li>
-        <li>Social Media &amp; Content Design</li>
+        <li>Brand &amp; Graphic Design</li>
+        <li>Content Planning, Captions & Scheduling</li>
+        <li>Social Media Management Support</li>
+        <li>Email & Client Support Management</li>
         <li>Frontend Development (HTML, CSS &amp; JavaScript)</li>
-        <li>Digital Assistance</li>
-        <li>Content Planning &amp; Copywriting</li>
       </ul>
     </div>
 
@@ -347,7 +370,7 @@ section { margin-bottom: 40px; }
           <i class="bi bi-geo-alt"></i>
           <div>
             <p class="info-label">Location</p>
-            <p class="info-value">City of Santo Tomas, Batangas, Philippines</p>
+            <p class="info-value">Santo Tomas City, Batangas, Philippines</p>
           </div>
         </div>
         <div class="info-item">
@@ -397,104 +420,125 @@ section { margin-bottom: 40px; }
      TOOLS — FULL WIDTH
 ════════════════════════════════════════ -->
 <section>
-  <span class="accent-label mb-3"></span>
-  <div class="row g-3 mt-1">
+  <span class="accent-label mb-3">Tools</span>
+  <div class="row row-cols-2 row-cols-sm-3 row-cols-md-6 g-3 justify-content-center align-items-stretch mt-1">
 
-    <div class="col-4 col-sm-3 col-md-2">
-      <div class="tool-card">
+    <div class="col d-flex justify-content-center">
+      <div class="tool-card w-100">
         <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/canva/canva-original.svg" alt="Canva">
         <p>Canva</p>
       </div>
     </div>
 
-    <div class="col-4 col-sm-3 col-md-2">
-      <div class="tool-card">
+    <div class="col d-flex justify-content-center">
+      <div class="tool-card w-100">
         <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/photoshop/photoshop-original.svg" alt="Photoshop">
         <p>Photoshop</p>
       </div>
     </div>
     
-    <div class="col-4 col-sm-3 col-md-2">
-      <div class="tool-card">
+    <div class="col d-flex justify-content-center">
+      <div class="tool-card w-100">
         <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/illustrator/illustrator-plain.svg" alt="Illustrator">
         <p>Illustrator</p>
       </div>
     </div>
 
-    <div class="col-4 col-sm-3 col-md-2">
-      <div class="tool-card">
+    <div class="col d-flex justify-content-center">
+      <div class="tool-card w-100">
         <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg" alt="Figma">
         <p>Figma</p>
       </div>
     </div>
 
-    <div class="col-4 col-sm-3 col-md-2">
-      <div class="tool-card">
+    <div class="col d-flex justify-content-center">
+      <div class="tool-card w-100">
         <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/google/google-original.svg" alt="Google Workspace">
         <p>Google Workspace</p>
       </div>
     </div>
 
-    <div class="col-4 col-sm-3 col-md-2">
-      <div class="tool-card">
+    <div class="col d-flex justify-content-center">
+      <div class="tool-card w-100">
         <img src="https://www.svgrepo.com/show/504203/capcut.svg" alt="CapCut">
         <p>CapCut</p>
       </div>
     </div>
 
-    <div class="col-4 col-sm-3 col-md-2">
-      <div class="tool-card">
+    <div class="col d-flex justify-content-center">
+      <div class="tool-card w-100">
         <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" alt="HTML5">
         <p>HTML</p>
       </div>
     </div>
 
-    <div class="col-4 col-sm-3 col-md-2">
-      <div class="tool-card">
+    <div class="col d-flex justify-content-center">
+      <div class="tool-card w-100">
         <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" alt="CSS3">
         <p>CSS</p>
       </div>
     </div>
 
-    <div class="col-4 col-sm-3 col-md-2">
-      <div class="tool-card">
+    <div class="col d-flex justify-content-center">
+      <div class="tool-card w-100">
         <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" alt="JavaScript">
         <p>JavaScript</p>
       </div>
     </div>
 
-    <div class="col-4 col-sm-3 col-md-2">
-      <div class="tool-card">
+    <div class="col d-flex justify-content-center">
+      <div class="tool-card w-100">
         <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt="Python">
         <p>Python</p>
       </div>
     </div>
 
-    <div class="col-4 col-sm-3 col-md-2">
-      <div class="tool-card">
+    <div class="col d-flex justify-content-center">
+      <div class="tool-card w-100">
         <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-plain.svg" alt="PHP">
         <p>PHP</p>
       </div>
     </div>
 
-    <div class="col-4 col-sm-3 col-md-2">
-      <div class="tool-card">
+    <div class="col d-flex justify-content-center">
+      <div class="tool-card w-100">
         <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg" alt="MySQL">
         <p>MySQL</p>
       </div>
     </div>
 
-    <div class="col-4 col-sm-3 col-md-2 offset-2 offset-sm-3 offset-md-4">
-  <div class="tool-card">
-    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" alt="GitHub">
-    <p>GitHub</p>
-  </div>
-</div>
+    <div class="col d-flex justify-content-center">
+      <div class="tool-card w-100">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" alt="GitHub">
+        <p>GitHub</p>
+      </div>
+    </div>
 
-    <div class="col-4 col-sm-3 col-md-2">
-      <div class="tool-card">
+    <div class="col d-flex justify-content-center">
+      <div class="tool-card w-100">
         <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/notion/notion-original.svg" alt="Notion">
         <p>Notion</p>
+      </div>
+    </div>
+
+    <div class="col d-flex justify-content-center">
+      <div class="tool-card w-100">
+        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/buffer.svg" alt="Buffer">
+        <p>Buffer</p>
+      </div>
+    </div>
+
+    <div class="col d-flex justify-content-center">
+      <div class="tool-card w-100">
+        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/openai.svg" alt="ChatGPT">
+        <p>ChatGPT</p>
+      </div>
+    </div>
+
+    <div class="col d-flex justify-content-center">
+      <div class="tool-card w-100">
+        <img src="https://proicons.com/icon/5893.svg" alt="Claude">
+        <p>Claude</p>
       </div>
     </div>
 
@@ -506,17 +550,32 @@ section { margin-bottom: 40px; }
 ════════════════════════════════════════ -->
 <section id="certificates">
 <div class="panel-raised">
-  <span class="accent-label mb-5">Recognition</span>
   <h4 class="fw-bold mt-2 mb-5">Certificates &amp; Awards</h4>
-  <div class="row g-4">
+  <div class="row g-4 justify-content-center">
     <div class="col-12 col-md-4">
-      <img src="assets/DataScienceCert.png" class="img-fluid cert-img" onclick="openViewer(this.src)">
+      <div class="cert-card">
+        <img src="assets/DataScienceCert.png" class="img-fluid cert-img" onclick="openViewer(this.src)">
+      </div>
     </div>
     <div class="col-12 col-md-4">
-      <img src="assets/NetBasicsCert.png" class="img-fluid cert-img" onclick="openViewer(this.src)">
+      <div class="cert-card">
+        <img src="assets/NetBasicsCert.png" class="img-fluid cert-img" onclick="openViewer(this.src)">
+      </div>
     </div>
     <div class="col-12 col-md-4">
-      <img src="assets/TechNexus.png" class="img-fluid cert-img" onclick="openViewer(this.src)">
+      <div class="cert-card">
+        <img src="assets/TechNexus.png" class="img-fluid cert-img" onclick="openViewer(this.src)">
+      </div>
+    </div>
+    <div class="col-12 col-md-4">
+      <div class="cert-card">
+        <img src="assets/CertCompletion.JPG" class="img-fluid cert-img" onclick="openViewer(this.src)">
+      </div>
+    </div>
+    <div class="col-12 col-md-4">
+      <div class="cert-card">
+        <img src="assets/CertInfolink.JPG" class="img-fluid cert-img" onclick="openViewer(this.src)">
+      </div>
     </div>
   </div>
 </div>

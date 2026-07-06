@@ -54,6 +54,11 @@ section                { margin-bottom: 60px; }
 }
 .nav-soft a { color: #6E5952; font-weight: 500; text-decoration: none; }
 
+.btn-col:hover {
+  color: #bda28b ;
+  text-decoration: none;
+}
+
 /* ─── BUTTONS ─── */
 .btn-soft {
   background: #EFE9E3;
@@ -227,7 +232,7 @@ section                { margin-bottom: 60px; }
   box-shadow: -5px -5px 10px #F5F1ED, 5px 5px 10px rgba(110,89,82,0.45);
 }
 .contact-social:hover {
-  color: #CFA2A5;
+  color: #6E5952;
   box-shadow: inset -4px -4px 8px #F5F1ED, inset 4px 4px 8px rgba(110,89,82,0.45);
 }
 
@@ -272,17 +277,17 @@ section                { margin-bottom: 60px; }
       <i class="bi bi-list fs-5"></i>
     </button>
     <div class="d-none d-lg-flex align-items-center gap-4">
-      <a class="fw-semibold" href="index.html">Home</a>
-      <a class="fw-semibold" href="about.html">About</a>
-      <a class="fw-semibold" href="index.html#work">Services</a>
+      <a class="btn-col fw-semibold" href="index.html">Home</a>
+      <a class="btn-col fw-semibold" href="about.html">About</a>
+      <a class="btn-col fw-semibold" href="index.html#work">Services</a>
       <a class="btn btn-dark rounded-5 fw-semibold" style="color:#fff;" href="#contact">Contact</a>
     </div>
   </div>
   <div class="collapse d-lg-none" id="navLinks">
     <div class="d-flex flex-column gap-3 mt-3 pb-1 ps-1">
-      <a class="fw-semibold" href="index.html">Home</a>
-      <a class="fw-semibold" href="about.html">About</a>
-      <a class="fw-semibold" href="index.html#work">Services</a>
+      <a class="btn-col fw-semibold" href="index.html">Home</a>
+      <a class="btn-col fw-semibold" href="about.html">About</a>
+      <a class="btn-col fw-semibold" href="index.html#work">Services</a>
       <div>
         <a class="btn btn-dark rounded-5 fw-semibold" style="color:#fff;" href="#contact">Contact</a>
       </div>
@@ -307,17 +312,20 @@ section                { margin-bottom: 60px; }
   <div class="col-12 col-lg-3">
     <div class="category-sidebar d-lg-flex flex-column gap-3">
 
-      <button class="cat-btn active" onclick="filterProjects('all', this)">
+      <!-- <button class="cat-btn" onclick="filterProjects('all', this)">
         <i class="bi bi-grid-3x3-gap"></i> All Works
+      </button> -->
+      <button class="cat-btn active" onclick="filterProjects('client', this)">
+        <i class="bi bi-person-workspace"></i> Content & Client Assistance
+      </button>
+      <button class="cat-btn" onclick="filterProjects('content', this)">
+        <i class="bi bi-brush"></i> Graphic & Content Design
       </button>
       <button class="cat-btn" onclick="filterProjects('branding', this)">
         <i class="bi bi-stars"></i> Branding & Visual Identity
       </button>
       <button class="cat-btn" onclick="filterProjects('uiux', this)">
         <i class="bi bi-layout-text-window"></i>Web (Design & Dev)
-      </button>
-      <button class="cat-btn" onclick="filterProjects('content', this)">
-        <i class="bi bi-brush"></i> Content & Social Media
       </button>
       <!--<button class="cat-btn" onclick="filterProjects('editorial', this)">
         <i class="bi bi-book"></i> Editorial & Publication
@@ -335,6 +343,72 @@ section                { margin-bottom: 60px; }
   <!-- PROJECT GRID -->
   <div class="col-12 col-lg-9">
     <div class="row g-4" id="projectGrid">
+
+      <!-- ─────────────────────────────────
+           CONTENT & CLIENT ASSISTANCE
+      ───────────────────────────────────── -->
+      <div class="col-12 col-sm-6 col-md-4 project-item" data-category="client">
+        <div class="project-card" onclick="openViewer('assets/thebrewsched.png')">
+          <img src="assets/thebrewsched.png" alt="Project">
+          <div class="project-card-body">
+            <h6>The Brew - August 2025 Content Schedule</h6>
+            <p>Content Planning</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-sm-6 col-md-4 project-item" data-category="client">
+        <div class="project-card" onclick="openViewer('assets/peachessched.png')">
+          <img src="assets/peachessched.png" alt="Project">
+          <div class="project-card-body">
+            <h6>Peaches - May 2026 Content Schedule</h6>
+            <p>Content Planning</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- <div class="col-12 col-sm-6 col-md-4 project-item" data-category="client">
+        <div class="project-card" onclick="openViewer('assets/efeed.png')">
+          <img src="assets/efeed.png" alt="Project">
+          <div class="project-card-body">
+            <h6>Content Planning SOP</h6>
+            <p>Content Planning</p>
+          </div>
+        </div>
+      </div> -->
+      
+      <!-- ─────────────────────────────────
+           GRAPHIC & CONTENT DESIGN
+      ───────────────────────────────────── -->
+      <div class="col-12 col-sm-6 col-md-4 project-item" data-category="content">
+        <div class="project-card" onclick="openViewer('assets/tbfeed.png')">
+          <img src="assets/tbfeed.png" alt="Project">
+          <div class="project-card-body">
+            <h6>The Brew - Coffee Shop</h6>
+            <p>Graphic & Content Design</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-sm-6 col-md-4 project-item" data-category="content">
+        <div class="project-card" onclick="openViewer('assets/pfeed.png')">
+          <img src="assets/pfeed.png" alt="Project">
+          <div class="project-card-body">
+            <h6>Peaches - Bag Boutique</h6>
+            <p>Graphic & Content Design</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-sm-6 col-md-4 project-item" data-category="content">
+        <div class="project-card" onclick="openViewer('assets/efeed.png')">
+          <img src="assets/efeed.png" alt="Project">
+          <div class="project-card-body">
+            <h6>Eve - Body Care Brand</h6>
+            <p>Graphic & Content Design</p>
+          </div>
+        </div>
+      </div>
 
       <!--BRANDING & VISUAL IDENTITY-->
 
@@ -371,10 +445,10 @@ section                { margin-bottom: 60px; }
       <!--WEB DESIGN & DEVELOPMENT-->
       <div class="col-12 col-sm-6 col-md-4 project-item" data-category="uiux">
         <div class="project-card">
-          <img src="assets/spacebg.png" alt="Project" onclick="openViewer('assets/spacebg.png')">
+          <img src="assets/mst.png" alt="Project" onclick="openViewer('assets/mst.png')">
           <div class="project-card-body">
             <h6>Mission Space Today</h6>
-            <p class="mb-2">Website (Design & Development)</p>
+            <p class="mb-2">Website</p>
             <a href="https://marylouinceb.github.io/mission-space-today-api/" target="_blank" class="project-link-btn">
               <i class="bi bi-box-arrow-up-right"></i> View Live
             </a>
@@ -384,7 +458,7 @@ section                { margin-bottom: 60px; }
 
       <div class="col-12 col-sm-6 col-md-4 project-item" data-category="uiux">
         <div class="project-card">
-          <img src="assets/bannerflower.jpg" alt="Project" onclick="openViewer('assets/bannerflower.jpg')">
+          <img src="assets/sf.png" alt="Project" onclick="openViewer('assets/sf.png')">
           <div class="project-card-body">
             <h6>Sincerely, Flower</h6>
             <p class="mb-2">Website</p>
@@ -397,46 +471,13 @@ section                { margin-bottom: 60px; }
 
       <div class="col-12 col-sm-6 col-md-4 project-item" data-category="uiux">
         <div class="project-card">
-          <img src="assets/headercanon.png" alt="Project" onclick="openViewer('assets/headercanon.png')">
+          <img src="assets/cer.png" alt="Project" onclick="openViewer('assets/cer.png')">
           <div class="project-card-body">
             <h6>SheTech: Canon EOS R10</h6>
             <p class="mb-2">Website</p>
             <a href="https://marylouinceb.github.io/product-web-project/" target="_blank" class="project-link-btn">
               <i class="bi bi-box-arrow-up-right"></i> View Live
             </a>
-          </div>
-        </div>
-      </div>
-
-      <!-- ─────────────────────────────────
-           CONTENT & SOCIAL MEDIA DESIGN
-      ───────────────────────────────────── -->
-      <div class="col-12 col-sm-6 col-md-4 project-item" data-category="content">
-        <div class="project-card" onclick="openViewer('assets/thebrew.png')">
-          <img src="assets/thebrew.png" alt="Project">
-          <div class="project-card-body">
-            <h6>The Brew - Coffee Shop</h6>
-            <p>Content & Social Media Posting</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-12 col-sm-6 col-md-4 project-item" data-category="content">
-        <div class="project-card" onclick="openViewer('assets/eve.png')">
-          <img src="assets/eve.png" alt="Project">
-          <div class="project-card-body">
-            <h6>Eve - Body Care Brand</h6>
-            <p>Content & Social Media Posting</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-12 col-sm-6 col-md-4 project-item" data-category="content">
-        <div class="project-card" onclick="openViewer('assets/peaches.png')">
-          <img src="assets/peaches.png" alt="Project">
-          <div class="project-card-body">
-            <h6>Peaches - Bag Boutique</h6>
-            <p>Content & Social Media Posting</p>
           </div>
         </div>
       </div>
@@ -614,6 +655,14 @@ function filterProjects(category, btn) {
     }
   });
 }
+
+// Set the default filter when the page loads
+window.addEventListener('DOMContentLoaded', () => {
+  const defaultBtn = document.querySelector('.cat-btn.active');
+  if (defaultBtn) {
+    filterProjects('client', defaultBtn);
+  }
+});
 
 function openViewer(src) {
   document.getElementById('viewerImg').src = src;
